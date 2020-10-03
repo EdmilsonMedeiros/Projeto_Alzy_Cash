@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PrincipalActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutBottom"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:background="@color/gra_ligh"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            app:srcCompat="@mipmap/ic_carteira"
+            tools:layout_editor_absoluteX="181dp"
+            tools:layout_editor_absoluteY="632dp" />
+    </LinearLayout>
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:mcv_arrowColor="#000000"
+        app:mcv_headerTextAppearance="@style/TextAppearance.AppCompat.Large"
+        app:mcv_selectionColor="#000000"
+        app:mcv_showOtherDates="all"
+        app:mcv_tileSize="50dp">
+
+    </com.prolificinteractive.materialcalendarview.MaterialCalendarView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@color/gra_ligh"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/textReceita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/carregando"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccentReceita"
+            android:textSize="14sp"
+            app:drawableEndCompat="@drawable/ic_baseline_arrow_upward_24" />
+
+        <TextView
+            android:id="@+id/textDespesa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/carregando"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDarkDespesa"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_baseline_arrow_downward_24" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="1dp"
+        android:background="@color/gra_ligh"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textSaldo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/carregando"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDarkReceita"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimaryDarkDefault"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textBemVindo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/carregando"
+            android:textAlignment="center"
+            android:textColor="@color/whiteColorAux"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout10"
+        android:layout_width="0dp"
+        android:layout_height="430dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView">
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/lan_amentos"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textView20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.562"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerMovimentos"
+            android:layout_width="match_parent"
+            android:layout_height="390dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView19">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
+
+
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/fb_voltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDarkDefault"
+        android:onClick="irTelaConfiguracoes"
+        android:src="@drawable/ic_baseline_settings_applications_24"
+        app:fab_colorNormal="@color/colorPrimaryDarkDefault"
+        app:fab_label="Configurações"
+        app:fab_size="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout4"></com.github.clans.fab.FloatingActionButton>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+
+            android:text="@string/mais_detalhes"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            app:drawableRightCompat="@drawable/ic_baseline_navigate_next_24"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/floatingActionMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="bottom|right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu_fab_size="normal"
+        app:menu_icon="@drawable/ic_baseline_add_circle_24"
+        app:menu_colorNormal="@color/colorPrimaryDarkDefault">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fb_receita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="irTelaReceita"
+            android:src="@drawable/ic_baseline_add_circle_24"
+            app:fab_colorNormal="@color/colorPrimaryDarkReceita"
+            app:fab_label="Adicionar Receita"
+            app:fab_size="normal"></com.github.clans.fab.FloatingActionButton>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fb_despesa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="irTelaDespesa"
+            android:src="@drawable/ic_baseline_remove_circle_24"
+            app:fab_colorNormal="@color/colorPrimaryDarkDespesa"
+            app:fab_label="Adicionar Despesa"
+            app:fab_size="normal"></com.github.clans.fab.FloatingActionButton>
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DespesaActivity">
+
+    <!---->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="51dp"
+        android:background="@color/colorPrimaryDarkDefault"
+        android:orientation="horizontal"
+        android:padding="10px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Adicionar Despesa"
+            android:textAlignment="center"
+            android:textColor="@color/whiteColorAux"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <!--FB's-->
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="411dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:background="@color/gra_ligh"
+        android:orientation="horizontal"
+        android:padding="10px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <EditText
+            android:id="@+id/editValorDespesa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:drawable/list_selector_background"
+            android:drawableLeft="@drawable/ic_channel_rais_despesa_foreground"
+            android:drawableRight="@drawable/ic_channel_arrow_down_foreground"
+            android:ems="10"
+            android:hint="0,00"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDespesa"
+            android:textColorHint="@color/colorPrimaryDarkDespesa"
+            android:textSize="36sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="411dp"
+        android:layout_height="70dp"
+        android:background="@color/gra_ligh"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout12"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            app:srcCompat="@mipmap/ic_carteira"
+            tools:layout_editor_absoluteX="181dp"
+            tools:layout_editor_absoluteY="632dp" />
+    </LinearLayout>
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/fb_voltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDarkDefault"
+        android:onClick="sair"
+        android:src="@drawable/ic_baseline_arrow_back_ios_24"
+        app:fab_colorNormal="@color/colorPrimaryDefault"
+        app:fab_label="Configurações"
+        app:fab_size="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"></com.github.clans.fab.FloatingActionButton>
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/fb_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDarkDefault"
+
+        android:src="@drawable/mi_ic_finish"
+        app:fab_colorNormal="@color/colorPrimaryDespesa"
+        app:fab_label="Confirmar"
+        app:fab_size="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </com.github.clans.fab.FloatingActionButton>
+
+    <LinearLayout
+        android:id="@+id/linearLayout12"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="1dp"
+        android:orientation="vertical"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAlignment="center"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="196dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editDataDespesa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/ic_baseline_calendar_today_despesa_24"
+                android:hint="Data | Ex: 31/12/2019"
+                android:inputType="date"
+                android:padding="10dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAlignment="center"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="295dp">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/editCategoriaDespesa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/ic_baseline_category_despesa_24"
+                android:hint="Categoria | Ex: Compras"
+                android:inputType="textCapSentences|textAutoComplete"
+                android:padding="10dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAlignment="center"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="398dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editDescricaoDespesa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/ic_baseline_description_despesa_24"
+                android:hint="Descrição | Ex: Compras do Mês"
+                android:inputType="textCapSentences|textAutoCorrect"
+                android:padding="10dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+
+    <!---->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

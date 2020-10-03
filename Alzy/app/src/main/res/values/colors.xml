@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <!--Cores do tema padrão:-->
+    <color name="colorPrimaryDefault">#FF5722</color>
+    <color name="colorPrimaryDarkDefault">#FF5722</color>
+    <color name="colorAccentDefault">#BD590D</color>
+
+    <!--Cores despesas:-->
+    <color name="colorPrimaryDespesa">#F44336</color>
+    <color name="colorPrimaryDarkDespesa">#CA3100</color>
+    <color name="colorAccentDespesa">#7A1F02</color>
+
+    <!--Cores receitas:-->
+    <color name="colorPrimaryReceita">#4CAF50</color>
+    <color name="colorPrimaryDarkReceita">#13AE19</color>
+    <color name="colorAccentReceita">#027306</color>
+
+    <!--Cores Card:-->
+    <color name="colorCardReceita">#F3FBF4</color>
+    <color name="colorCardDespesa">#FBF2F1</color>
+
+
+    <color name="whiteColorAux">#FFF</color>
+    <color name="gra_ligh">#E0DCDC</color>
+</resources>

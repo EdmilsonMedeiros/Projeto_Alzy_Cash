@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Alzy Cash</string>
+    <string name="organize_suas_">Organize suas contas \n onde estiver</string>
+    <string name="simples_">Simples, fácil de usar e grátis</string>
+    <string name="todo2">TODO</string>
+    <string name="cadastre_se_gratis">Cadastre-se, é grátis!</string>
+    <string name="saiba_para_">Saiba para onde está indo seu dinheiro</string>
+    <string name="organizando_">Organizando seus lançamentos e acompanhando\n o destino de cada centavo</string>
+    <string name="todo">TODO</string>
+    <string name="j_fiz_uma_conta">Já fiz uma conta</string>
+    <string name="cadastrar_se">Cadastrar-se</string>
+    <string name="versao">Versão 1.0</string>
+    <string name="login_">Fazer Login</string>
+    <string name="bem_">Bem vindo</string>
+    <string name="recup__">Recuperar</string>
+    <string name="carregando">Carregando...</string>
+    <string name="intro_1_app_controle_pessoal">Aplicativo grátis para controle\n financeiro pessoal 100% \non-line.</string>
+    <string name="lan_amentos">Lançamentos</string>
+    <string name="mais_detalhes">Mais Detalhes</string>
+    <string name="usuario_mail_com">usuario@mail.com</string>
+    <string name="alterar_senha">Alterar Senha</string>
+    <string name="atualizar_e_mail">Atualizar E-mail</string>
+    <string name="atualizar_senha">Atualizar Senha</string>
+    <string name="e_mail">E-mail</string>
+    <string name="alterar_e_mail">Alterar E-mail</string>
+</resources>

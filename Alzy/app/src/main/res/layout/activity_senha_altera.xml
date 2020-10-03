@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AlteraSenhaActivity">
+
+    <!---->
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimaryDarkDefault"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/ic_baseline_lock_white_24"
+            android:text="Alterar Senha"
+            android:textAlignment="center"
+            android:textColor="@color/whiteColorAux"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="411dp"
+        android:layout_height="30dp"
+        android:background="@color/gra_ligh"
+        android:padding="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/usuario_mail_com"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:background="@color/gra_ligh"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout14"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            app:srcCompat="@mipmap/ic_carteira"
+            tools:layout_editor_absoluteX="181dp"
+            tools:layout_editor_absoluteY="632dp" />
+    </LinearLayout>
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/fb_voltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDarkDefault"
+        android:onClick="sair"
+        android:src="@drawable/ic_baseline_arrow_back_ios_24"
+        app:fab_colorNormal="@color/colorPrimaryDarkDefault"
+        app:fab_label="Configurações"
+        app:fab_size="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.002"
+        app:layout_constraintStart_toStartOf="parent"></com.github.clans.fab.FloatingActionButton>
+
+    <LinearLayout
+        android:id="@+id/linearLayout14"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:orientation="vertical"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="0dp"
+            android:textAlignment="center"
+            app:errorEnabled="true"
+            app:passwordToggleDrawable="@drawable/ic_baseline_remove_red_eye_24"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/colorPrimaryDarkDefault">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editSenhaAlteraEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="Senha"
+                android:inputType="textPassword"
+                android:padding="10dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="0dp"
+            android:textAlignment="center"
+            app:errorEnabled="true"
+            app:passwordToggleDrawable="@drawable/ic_baseline_remove_red_eye_24"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/colorPrimaryDarkDefault">
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:id="@+id/editEmailLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+
+                android:hint="Senha Nova"
+                android:inputType="textPassword"
+                android:padding="10dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/buttonLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDefault"
+            android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"
+            android:gravity="center"
+            android:text="@string/alterar_senha"
+            android:textAlignment="center"
+            android:textColor="@color/whiteColorAux" />
+
+    </LinearLayout>
+
+
+    <!---->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
