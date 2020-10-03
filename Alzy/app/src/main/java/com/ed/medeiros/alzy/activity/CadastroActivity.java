@@ -29,6 +29,7 @@ public class CadastroActivity extends AppCompatActivity {
         progressBarCircle   = findViewById(R.id.progressBarCircularCadastro);
 
         progressBarCircle.setVisibility(View.GONE);
+        //OBS
     }
     //--
     public void validarECadastrarUsuario(View view){
