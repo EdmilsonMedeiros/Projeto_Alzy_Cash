@@ -82,6 +82,21 @@ public class CadastroActivity extends AppCompatActivity {
                     }
                 });
             }
+        }{
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+            //Configura o alertDialog:
+            alertDialog.setTitle("Erro!");
+            alertDialog.setMessage("Você está sem acesso a internet. Verifique sua conexão.");
+            alertDialog.setIcon(R.drawable.ic_baseline_warning_24);
+
+            alertDialog.setNegativeButton("Fechar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                }
+            });
+            AlertDialog alert = alertDialog.create();
+            alert.show();
         }
     }
     //--
