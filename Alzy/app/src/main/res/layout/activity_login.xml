@@ -6,16 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".activity.LoginActivity">
 
-    <ProgressBar
-        android:id="@+id/progressBarCircular"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="201dp"
-        android:layout_height="107dp"
-        android:layout_marginTop="250dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
         android:id="@+id/linearLayout7"
         android:layout_width="70dp"
@@ -174,5 +164,15 @@
                 tools:layout_editor_absoluteY="459dp" />
         </LinearLayout>
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBarCircular"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="245dp"
+        android:layout_height="245dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
