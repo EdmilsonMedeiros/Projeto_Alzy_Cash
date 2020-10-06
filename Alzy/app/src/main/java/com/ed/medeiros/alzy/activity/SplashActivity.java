@@ -8,8 +8,10 @@ import android.os.Handler;
 import android.view.WindowManager;
 
 import com.ed.medeiros.alzy.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class SplashActivity extends AppCompatActivity {
+    private FirebaseAuth autenticacao = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +25,20 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(getApplicationContext(), PrincipalActivity.class));
-                finish();
+                if (autenticacao.getCurrentUser() != null){
+                    startActivity(new Intent(getApplicationContext(), PrincipalActivity.class));
+                    finish();
+                }else {
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                    finish();
+                }
             }
         }, 2000);
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 }

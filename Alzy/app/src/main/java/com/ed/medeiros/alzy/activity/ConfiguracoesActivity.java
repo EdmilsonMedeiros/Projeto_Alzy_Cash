@@ -44,4 +44,11 @@ public class ConfiguracoesActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (autenticacao.getCurrentUser() == null){
+            startActivity(new Intent(this, SplashActivity.class));
+        }
+    }
 }

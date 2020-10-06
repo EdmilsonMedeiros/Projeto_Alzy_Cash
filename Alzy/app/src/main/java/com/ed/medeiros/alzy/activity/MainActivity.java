@@ -49,5 +49,6 @@ public class MainActivity extends IntroActivity {
         if (autenticacao.getCurrentUser() != null){
             startActivity(new Intent(this, SplashActivity.class));
         }
+        //autenticacao.signOut();
     }
 }

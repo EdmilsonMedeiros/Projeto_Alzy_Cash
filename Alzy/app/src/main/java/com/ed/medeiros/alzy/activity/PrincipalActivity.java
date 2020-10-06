@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.ed.medeiros.alzy.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnMonthChangedListener;
 
 public class PrincipalActivity extends AppCompatActivity {
     private MaterialCalendarView calendarView;
+    private FirebaseAuth autenticacao = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,11 @@ public class PrincipalActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         configuraCalendarView();
+
+        if (autenticacao.getCurrentUser() == null){
+            startActivity(new Intent(this, SplashActivity.class));
+        }
+
     }
     //--
     public void configuraCalendarView(){
@@ -55,6 +62,7 @@ public class PrincipalActivity extends AppCompatActivity {
         });
 
     }
+
 }
 
 

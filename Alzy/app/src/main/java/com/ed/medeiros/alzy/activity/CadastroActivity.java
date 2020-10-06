@@ -27,7 +27,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class CadastroActivity extends AppCompatActivity {
     private ProgressBar progressBarCircle;
     private EditText campoUsuario, campoEmail, campoSenha;
-    private FirebaseAuth autenticacao;
+    private FirebaseAuth autenticacao = FirebaseAuth.getInstance();
     private int contadorProgress = 0;
     private Usuario  usuario;
     @Override
@@ -60,7 +60,7 @@ public class CadastroActivity extends AppCompatActivity {
                 usuario.setEmail(campoEmail.getText().toString());
                 usuario.setSenha(campoSenha.getText().toString());
 
-                autenticacao = FirebaseAuth.getInstance();
+
                 autenticacao.createUserWithEmailAndPassword(
                         usuario.getEmail(),
                         usuario.getSenha()
@@ -126,4 +126,11 @@ public class CadastroActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (autenticacao.getCurrentUser() != null){
+            startActivity(new Intent(this, SplashActivity.class));
+        }
+    }
 }
