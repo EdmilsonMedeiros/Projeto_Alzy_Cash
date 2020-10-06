@@ -52,8 +52,9 @@ public class CadastroActivity extends AppCompatActivity {
             String senha = campoSenha.getText().toString();
             if (nome.equals("") || email.equals("") || senha.equals("")){
                 Toast.makeText(this, "Preencha todos os campos!!", Toast.LENGTH_LONG).show();
+
             }else {
-                irTelaSplash();
+                progressBarCircle.setVisibility(View.VISIBLE);
                 usuario = new Usuario();
                 usuario.setNome(campoUsuario.getText().toString());
                 usuario.setEmail(campoEmail.getText().toString());
@@ -68,16 +69,15 @@ public class CadastroActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             Toast.makeText(getApplicationContext(), "Sucesso ao Cadastrar", Toast.LENGTH_SHORT).show();
-                            progressBarCircle.setVisibility(View.VISIBLE);
 
                             String idUsuario = Base64ID.codificarBase64(campoEmail.getText().toString());
                             usuario.setIdUsuario(idUsuario);
                             usuario.salvar();
 
-                            startActivity(new Intent(CadastroActivity.this, SplashActivity.class));
-                            finish();
+                            irTelaSplash();
                         }else {
                             Toast.makeText(getApplicationContext(), "Erro ao Cadastrar", Toast.LENGTH_SHORT).show();
+                            progressBarCircle.setVisibility(View.GONE);
                         }
                     }
                 });
