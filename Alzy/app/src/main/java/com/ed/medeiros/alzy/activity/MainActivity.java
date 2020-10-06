@@ -6,14 +6,17 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.ed.medeiros.alzy.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.heinrichreimersoftware.materialintro.app.IntroActivity;
 import com.heinrichreimersoftware.materialintro.slide.FragmentSlide;
 
 public class MainActivity extends IntroActivity {
+    private FirebaseAuth autenticacao = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -38,5 +41,13 @@ public class MainActivity extends IntroActivity {
     public void irTelaLogin(View v){
         startActivity(new Intent(this, LoginActivity.class));
         finish();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (autenticacao.getCurrentUser() != null){
+            startActivity(new Intent(this, SplashActivity.class));
+        }
     }
 }

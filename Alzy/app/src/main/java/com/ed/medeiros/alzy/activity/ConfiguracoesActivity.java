@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.ed.medeiros.alzy.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class ConfiguracoesActivity extends AppCompatActivity {
+    FirebaseAuth autenticacao = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,13 @@ public class ConfiguracoesActivity extends AppCompatActivity {
     }
     public void irTelaReport(View view){
         startActivity(new Intent(this, ReportActivity.class));
+    }
+    public void logOut(View view){
+        if (autenticacao != null){
+            autenticacao.signOut();
+            startActivity(new Intent(this, LoginActivity.class));
+            finish();
+        }
     }
 
 }

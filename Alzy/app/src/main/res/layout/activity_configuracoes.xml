@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/whiteColorAux"
-    tools:context=".ConfiguracoesActivity">
+    tools:context=".activity.ConfiguracoesActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -156,7 +156,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableRight="@drawable/ic_baseline_exit_to_app_24"
-
+            android:onClick="logOut"
             android:padding="10dp"
             android:text="Sair"
             android:textAlignment="inherit"
