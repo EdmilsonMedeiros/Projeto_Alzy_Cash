@@ -31,7 +31,7 @@ public class PrincipalActivity extends AppCompatActivity {
     private String                  idUsuario = Base64ID.codificarBase64(autenticacao.getCurrentUser().getEmail());
     private DatabaseReference       databaseReference = FirebaseDatabase.getInstance().getReference();
     private Double                  despesaTotal, receitaTotal;
-    private TextView                textDespesa, textReceita, textSaldo;
+    private TextView                textDespesa, textReceita, textSaldo, textBoasVindas;
 
 
 
@@ -44,6 +44,7 @@ public class PrincipalActivity extends AppCompatActivity {
         textDespesa     = findViewById(R.id.textDespesa);
         textReceita     = findViewById(R.id.textReceita);
         textSaldo       = findViewById(R.id.textSaldo);
+        textBoasVindas  = findViewById(R.id.textBemVindo);
 
     }
 
@@ -108,6 +109,23 @@ public class PrincipalActivity extends AppCompatActivity {
             }
         });
     }
+    public void darBoasVindas(){
+        DatabaseReference referenceBoasVindas = databaseReference.child("usuarios").child(idUsuario);
+        referenceBoasVindas.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Usuario usuario = dataSnapshot.getValue(Usuario.class);
+                String nomeUsuario = usuario.getNome();
+
+                textBoasVindas.setText("Olá, " + nomeUsuario);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
     //--
     public void irTelaConfiguracoes(View view){
         startActivity(new Intent(this, ConfiguracoesActivity.class));
@@ -148,6 +166,7 @@ public class PrincipalActivity extends AppCompatActivity {
         recuperarDespesa();
         recuperarReceita();
         recuperarSaldo();
+        darBoasVindas();
 
         configuraCalendarView();
 
