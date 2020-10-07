@@ -26,12 +26,12 @@ import java.text.DecimalFormat;
 
 public class PrincipalActivity extends AppCompatActivity {
 
-    private MaterialCalendarView calendarView;
-    private FirebaseAuth autenticacao = FirebaseAuth.getInstance();
-    private String idUsuario = Base64ID.codificarBase64(autenticacao.getCurrentUser().getEmail());
-    private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
-    private Double despesaTotal;
-    private TextView textDespesa, textReceita, textSaldo;
+    private MaterialCalendarView    calendarView;
+    private FirebaseAuth            autenticacao = FirebaseAuth.getInstance();
+    private String                  idUsuario = Base64ID.codificarBase64(autenticacao.getCurrentUser().getEmail());
+    private DatabaseReference       databaseReference = FirebaseDatabase.getInstance().getReference();
+    private Double                  despesaTotal, receitaTotal;
+    private TextView                textDespesa, textReceita, textSaldo;
 
 
 
@@ -40,17 +40,59 @@ public class PrincipalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
 
-        calendarView = findViewById(R.id.calendarView);
-        textDespesa = findViewById(R.id.textDespesa);
+        calendarView    = findViewById(R.id.calendarView);
+        textDespesa     = findViewById(R.id.textDespesa);
+        textReceita     = findViewById(R.id.textReceita);
+        textSaldo       = findViewById(R.id.textSaldo);
 
-        recuperarDespesa();
-        recuperarReceita();
-        recuperarSaldo();
     }
 
-    private void recuperarSaldo() {
-        databaseReference = databaseReference.child("usuarios").child(idUsuario);
-        databaseReference.addValueEventListener(new ValueEventListener() {
+    public void recuperarSaldo() {
+        DatabaseReference referenceSaldo = databaseReference.child("usuarios").child(idUsuario);
+        referenceSaldo.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Usuario usuario = dataSnapshot.getValue(Usuario.class);
+                receitaTotal = usuario.getTotalReceita();
+                despesaTotal = usuario.getTotalDespesa();
+                Double calculo = receitaTotal - despesaTotal;
+
+                DecimalFormat decimalFormat = new DecimalFormat("0.##");
+                String resultadoFormatado = decimalFormat.format(calculo);
+                String total = "R$ " + resultadoFormatado;
+                textSaldo.setText(total);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
+    public void recuperarReceita() {
+        final DatabaseReference referenceReceita = databaseReference.child("usuarios").child(idUsuario);
+        referenceReceita.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Usuario usuario = dataSnapshot.getValue(Usuario.class);
+                receitaTotal = usuario.getTotalReceita();
+
+                DecimalFormat decimalFormat = new DecimalFormat("0.##");
+                String resultadoFormatado = decimalFormat.format(receitaTotal);
+                resultadoFormatado = "R$ "+resultadoFormatado;
+                textReceita.setText(resultadoFormatado);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void recuperarDespesa() {
+        DatabaseReference referenceDespesa = databaseReference.child("usuarios").child(idUsuario);
+        referenceDespesa.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Usuario usuario = dataSnapshot.getValue(Usuario.class);
@@ -58,20 +100,13 @@ public class PrincipalActivity extends AppCompatActivity {
 
                 DecimalFormat decimalFormat = new DecimalFormat("0.##");
                 String resultadoFormatado = decimalFormat.format(despesaTotal);
+                resultadoFormatado = "R$ " + resultadoFormatado;
                 textDespesa.setText(resultadoFormatado);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }
         });
-    }
-
-    private void recuperarReceita() {
-
-    }
-
-    private void recuperarDespesa() {
-
     }
     //--
     public void irTelaConfiguracoes(View view){
@@ -84,16 +119,6 @@ public class PrincipalActivity extends AppCompatActivity {
         startActivity(new Intent(this, DespesaActivity.class));
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        configuraCalendarView();
-
-        if (autenticacao.getCurrentUser() == null){
-            startActivity(new Intent(this, SplashActivity.class));
-        }
-
-    }
     //--
     public void configuraCalendarView(){
         CharSequence meses[] = {"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"};
@@ -114,6 +139,22 @@ public class PrincipalActivity extends AppCompatActivity {
     }
     public void irtelaDetalhes(View view){
         startActivity(new Intent(this, DetalhesActivity.class));
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        recuperarDespesa();
+        recuperarReceita();
+        recuperarSaldo();
+
+        configuraCalendarView();
+
+        if (autenticacao.getCurrentUser() == null){
+            startActivity(new Intent(this, SplashActivity.class));
+        }
+
     }
 
 }
