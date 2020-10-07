@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.ed.medeiros.alzy.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,6 +24,8 @@ public class DetalhesActivity extends AppCompatActivity {
         if (autenticacao.getCurrentUser() == null){
             startActivity(new Intent(this, SplashActivity.class));
         }
-
+    }
+    public void sair(View view){
+        finish();
     }
 }

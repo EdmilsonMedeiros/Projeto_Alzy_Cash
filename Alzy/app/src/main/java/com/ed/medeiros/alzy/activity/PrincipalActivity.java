@@ -62,6 +62,9 @@ public class PrincipalActivity extends AppCompatActivity {
         });
 
     }
+    public void irtelaDetalhes(View view){
+        startActivity(new Intent(this, DetalhesActivity.class));
+    }
 
 }
 

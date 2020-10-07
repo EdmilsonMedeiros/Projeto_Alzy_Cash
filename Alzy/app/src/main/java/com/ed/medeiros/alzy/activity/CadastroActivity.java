@@ -82,7 +82,7 @@ public class CadastroActivity extends AppCompatActivity {
                     }
                 });
             }
-        }{
+        }else{
             AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
             //Configura o alertDialog:
             alertDialog.setTitle("Erro!");
