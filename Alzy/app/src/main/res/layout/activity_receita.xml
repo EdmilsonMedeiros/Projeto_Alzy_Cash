@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReceitaActivity">
+    tools:context=".activity.ReceitaActivity">
 
     <!---->
     <LinearLayout
@@ -88,7 +88,7 @@
         android:id="@+id/fb_confirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:onClick="validarCamposESalvarReceita"
         android:background="@color/colorPrimaryDarkDefault"
         android:src="@drawable/mi_ic_finish"
         app:fab_colorNormal="@color/colorPrimaryReceita"
