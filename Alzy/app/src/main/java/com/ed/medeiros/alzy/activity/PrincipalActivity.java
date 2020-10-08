@@ -33,8 +33,6 @@ public class PrincipalActivity extends AppCompatActivity {
     private Double                  despesaTotal, receitaTotal;
     private TextView                textDespesa, textReceita, textSaldo, textBoasVindas;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +45,6 @@ public class PrincipalActivity extends AppCompatActivity {
         textBoasVindas  = findViewById(R.id.textBemVindo);
 
     }
-
     public void recuperarSaldo() {
         DatabaseReference referenceSaldo = databaseReference.child("usuarios").child(idUsuario);
         referenceSaldo.addValueEventListener(new ValueEventListener() {
@@ -68,9 +65,7 @@ public class PrincipalActivity extends AppCompatActivity {
 
             }
         });
-
     }
-
     public void recuperarReceita() {
         final DatabaseReference referenceReceita = databaseReference.child("usuarios").child(idUsuario);
         referenceReceita.addValueEventListener(new ValueEventListener() {
@@ -90,7 +85,6 @@ public class PrincipalActivity extends AppCompatActivity {
             }
         });
     }
-
     private void recuperarDespesa() {
         DatabaseReference referenceDespesa = databaseReference.child("usuarios").child(idUsuario);
         referenceDespesa.addValueEventListener(new ValueEventListener() {
@@ -116,13 +110,10 @@ public class PrincipalActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Usuario usuario = dataSnapshot.getValue(Usuario.class);
                 String nomeUsuario = usuario.getNome();
-
                 textBoasVindas.setText("Olá, " + nomeUsuario);
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }
@@ -142,59 +133,28 @@ public class PrincipalActivity extends AppCompatActivity {
         CharSequence meses[] = {"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"};
         calendarView.setTitleMonths(meses);
         final CalendarDay dataAtual= calendarView.getCurrentDate();
-
         String mesSelecionado =String.format("%02d", dataAtual.getMonth() + 1);
         String mesAnoSelecionado = mesSelecionado + "" + dataAtual.getYear();
-
         calendarView.setOnMonthChangedListener(new OnMonthChangedListener() {
             @Override
             public void onMonthChanged(MaterialCalendarView widget, CalendarDay date) {
                 //String mesAnoSelecionado = String.format("%02", date.getMonth() + 1);
-
             }
         });
-
     }
     public void irtelaDetalhes(View view){
         startActivity(new Intent(this, DetalhesActivity.class));
     }
-
     @Override
     protected void onStart() {
         super.onStart();
-
         recuperarDespesa();
         recuperarReceita();
         recuperarSaldo();
         darBoasVindas();
-
         configuraCalendarView();
-
         if (autenticacao.getCurrentUser() == null){
             startActivity(new Intent(this, SplashActivity.class));
         }
-
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
