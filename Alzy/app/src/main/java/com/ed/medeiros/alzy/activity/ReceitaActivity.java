@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.ed.medeiros.alzy.R;
 import com.ed.medeiros.alzy.pacoteauxiliar.Base64ID;
+import com.ed.medeiros.alzy.pacoteauxiliar.Movimentacao;
 import com.ed.medeiros.alzy.pacoteauxiliar.Usuario;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -27,6 +28,7 @@ public class ReceitaActivity extends AppCompatActivity {
     private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
     private EditText editValor, editData, editCategoria, editDescricao;
     private String idUsuario = Base64ID.codificarBase64(autenticacao.getCurrentUser().getEmail());
+    private Movimentacao movimentacao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,9 +68,26 @@ public class ReceitaActivity extends AppCompatActivity {
             valorRecuperado = Double.parseDouble(valor);
             DatabaseReference referenceDespesa = databaseReference.child("usuarios").child(idUsuario);
             referenceDespesa.child("totalReceita").setValue(valorRecuperado + receitaTotal);
+            salvarNovaMovimentacao();
             Toast.makeText(this, "Receita Salva!!!", Toast.LENGTH_LONG).show();
             finish();
         }
+    }
+
+    private void salvarNovaMovimentacao() {
+        String valor        = editValor.getText().toString();
+        String data         = editData.getText().toString();
+        String categoria    = editCategoria.getText().toString();
+        String descricao    = editDescricao.getText().toString();
+        Double valorFinal   = Double.parseDouble(valor);
+
+        movimentacao = new Movimentacao();
+        movimentacao.setValor(valorFinal);
+        movimentacao.setData(data);
+        movimentacao.setCategoria(categoria);
+        movimentacao.setDescricao(descricao);
+        movimentacao.setTipo("r");
+        movimentacao.salvar(data);
     }
 
     public void sair(View view){

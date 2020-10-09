@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.ed.medeiros.alzy.R;
 import com.ed.medeiros.alzy.pacoteauxiliar.Base64ID;
+import com.ed.medeiros.alzy.pacoteauxiliar.Movimentacao;
 import com.ed.medeiros.alzy.pacoteauxiliar.Usuario;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -28,6 +29,7 @@ public class DespesaActivity extends AppCompatActivity {
     private DatabaseReference   databaseReference = FirebaseDatabase.getInstance().getReference();
     private EditText            editData, editCategoria, editDescricao, editValor;
     private Double              valorRecuperado, despesaTotal;
+    private Movimentacao movimentacao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,11 +69,27 @@ public class DespesaActivity extends AppCompatActivity {
             valorRecuperado = Double.parseDouble(valor);
             DatabaseReference referenceDespesa = databaseReference.child("usuarios").child(idUsuario);
             referenceDespesa.child("totalDespesa").setValue(valorRecuperado + despesaTotal);
+            salvarNovaMovimentacao();
             Toast.makeText(this, "Despesa Salva!!!", Toast.LENGTH_LONG).show();
             finish();
         }
     }
 
+    private void salvarNovaMovimentacao() {
+        String valor        = editValor.getText().toString();
+        String data         = editData.getText().toString();
+        String categoria    = editCategoria.getText().toString();
+        String descricao    = editDescricao.getText().toString();
+        Double valorFinal   = Double.parseDouble(valor);
+
+        movimentacao = new Movimentacao();
+        movimentacao.setValor(valorFinal);
+        movimentacao.setData(data);
+        movimentacao.setCategoria(categoria);
+        movimentacao.setDescricao(descricao);
+        movimentacao.setTipo("d");
+        movimentacao.salvar(data);
+    }
 
 
     public void sair(View view){

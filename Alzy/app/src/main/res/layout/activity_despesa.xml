@@ -63,7 +63,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="411dp"
+        android:layout_width="0dp"
         android:layout_height="70dp"
         android:background="@color/gra_ligh"
         android:orientation="vertical"
@@ -75,7 +75,7 @@
         app:layout_constraintVertical_bias="1.0">
 
         <ImageView
-            android:id="@+id/imageView6"
+            android:id="@+id/imageView9"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             app:srcCompat="@mipmap/ic_carteira"
