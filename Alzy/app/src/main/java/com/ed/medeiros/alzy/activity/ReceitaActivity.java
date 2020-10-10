@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.ed.medeiros.alzy.R;
 import com.ed.medeiros.alzy.pacoteauxiliar.Base64ID;
+import com.ed.medeiros.alzy.pacoteauxiliar.DataCustomizada;
 import com.ed.medeiros.alzy.pacoteauxiliar.Movimentacao;
 import com.ed.medeiros.alzy.pacoteauxiliar.Usuario;
 import com.google.firebase.auth.FirebaseAuth;
@@ -39,6 +40,8 @@ public class ReceitaActivity extends AppCompatActivity {
         editCategoria = findViewById(R.id.editCategoriaReceita);
         editData = findViewById(R.id.editDataReceita);
         editDescricao = findViewById(R.id.editDescricaoReceita);
+
+
 
     }
     public void recuperarReceita() {
@@ -99,6 +102,7 @@ public class ReceitaActivity extends AppCompatActivity {
         super.onStart();
 
         recuperarReceita();
+        editData.setText(DataCustomizada.dataAtual());
 
         if (autenticacao.getCurrentUser() == null){
             startActivity(new Intent(this, SplashActivity.class));

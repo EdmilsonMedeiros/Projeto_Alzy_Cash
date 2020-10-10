@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.ed.medeiros.alzy.R;
 import com.ed.medeiros.alzy.pacoteauxiliar.Base64ID;
+import com.ed.medeiros.alzy.pacoteauxiliar.DataCustomizada;
 import com.ed.medeiros.alzy.pacoteauxiliar.Movimentacao;
 import com.ed.medeiros.alzy.pacoteauxiliar.Usuario;
 import com.google.firebase.auth.FirebaseAuth;
@@ -100,7 +101,7 @@ public class DespesaActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         recuperarDespesa();
-
+        editData.setText(DataCustomizada.dataAtual());
 
         if (autenticacao.getCurrentUser() == null){
             startActivity(new Intent(this, SplashActivity.class));
