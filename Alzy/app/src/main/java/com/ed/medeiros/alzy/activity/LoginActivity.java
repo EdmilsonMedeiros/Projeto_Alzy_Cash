@@ -52,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(new Intent(LoginActivity.this, SplashActivity.class));
                                 finish();
                             }else {
+                                progressBarCircle.setVisibility(View.GONE);
                                 Toast.makeText(LoginActivity.this, "Erro!! Reveja os dados", Toast.LENGTH_LONG).show();
                             }
                         }

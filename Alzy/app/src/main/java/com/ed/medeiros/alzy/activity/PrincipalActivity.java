@@ -58,12 +58,12 @@ public class PrincipalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
 
-        calendarView    = findViewById(R.id.calendarView);
-        textDespesa     = findViewById(R.id.textDespesa);
-        textReceita     = findViewById(R.id.textReceita);
-        textSaldo       = findViewById(R.id.textSaldo);
-        textBoasVindas  = findViewById(R.id.textBemVindo);
-        recyclerView    = findViewById(R.id.recyclerMovimentos);
+        calendarView        = findViewById(R.id.calendarView);
+        textDespesa         = findViewById(R.id.textDespesa);
+        textReceita         = findViewById(R.id.textReceita);
+        textSaldo           = findViewById(R.id.textSaldo);
+        textBoasVindas      = findViewById(R.id.textBemVindo);
+        recyclerView        = findViewById(R.id.recyclerMovimentos);
 
 
         adapterMovimentacao = new AdapterMovimentacao(movimentacoes, this);
@@ -168,6 +168,7 @@ public class PrincipalActivity extends AppCompatActivity {
                 mesAnoSelecionado = String.valueOf(mesSelecionado + "" + date.getYear());
                 movimentacaoRef.removeEventListener(valueEventListenerMovimentacoes);
                 recuperarMovimentacao();
+
             }
         });
     }
