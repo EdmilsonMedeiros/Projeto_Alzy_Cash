@@ -231,7 +231,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="irTelaReceita"
-            android:src="@drawable/ic_baseline_add_circle_24"
+            android:src="@drawable/ic_baseline_trending_up_24"
             app:fab_colorNormal="@color/colorPrimaryDarkReceita"
             app:fab_label="Adicionar Receita"
             app:fab_size="normal"></com.github.clans.fab.FloatingActionButton>
@@ -241,7 +241,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="irTelaDespesa"
-            android:src="@drawable/ic_baseline_remove_circle_24"
+            android:src="@drawable/ic_baseline_trending_down_24"
             app:fab_colorNormal="@color/colorPrimaryDarkDespesa"
             app:fab_label="Adicionar Despesa"
             app:fab_size="normal"></com.github.clans.fab.FloatingActionButton>
