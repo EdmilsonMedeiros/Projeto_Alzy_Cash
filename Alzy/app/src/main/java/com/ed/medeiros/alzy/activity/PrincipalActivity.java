@@ -2,6 +2,7 @@ package com.ed.medeiros.alzy.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -67,6 +68,29 @@ public class PrincipalActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapterMovimentacao);
 
+    }
+
+    public void swipe(){
+        ItemTouchHelper.Callback itemTouch = new ItemTouchHelper.Callback() {
+            @Override
+            public int getMovementFlags(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder) {
+                int dragFlags = ItemTouchHelper.ACTION_STATE_IDLE;
+                int swipeFlags = ItemTouchHelper.END;
+                return makeMovementFlags(dragFlags, swipeFlags);
+            }
+
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+            }
+
+        };
+        new ItemTouchHelper(itemTouch).attachToRecyclerView(recyclerView);
     }
 
     private void configuraCalendarView() {
@@ -208,6 +232,7 @@ public class PrincipalActivity extends AppCompatActivity {
         darBoasVindas();
 
         configuraCalendarView();
+        swipe();
         recuperarMovimentacao();
 
         if (autenticacao.getCurrentUser() == null){
