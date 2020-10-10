@@ -1,16 +1,19 @@
 package com.ed.medeiros.alzy.activity;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ed.medeiros.alzy.R;
 import com.ed.medeiros.alzy.pacoteauxiliar.AdapterMovimentacao;
@@ -48,6 +51,7 @@ public class PrincipalActivity extends AppCompatActivity {
     private List<Movimentacao>      movimentacoes = new ArrayList<>();
     private DatabaseReference       movimentacaoRef;
     private ValueEventListener      valueEventListenerMovimentacoes;
+    private DatabaseReference       usuarioRef = FirebaseDatabase.getInstance().getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,11 +90,68 @@ public class PrincipalActivity extends AppCompatActivity {
 
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-
+                exluirMovimentacao(viewHolder);
             }
 
         };
         new ItemTouchHelper(itemTouch).attachToRecyclerView(recyclerView);
+    }
+
+    public void exluirMovimentacao(final RecyclerView.ViewHolder viewHolder){
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        //Configura o alertDialog:
+        alertDialog.setTitle("Excluir Movimentação!");
+        alertDialog.setMessage("Tem certeza que deseja excluir?");
+        alertDialog.setCancelable(false);
+
+        alertDialog.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //Toast.makeText(PrincipalActivity.this, "Função indisponível", Toast.LENGTH_LONG).show();
+                int position = viewHolder.getAdapterPosition();
+                movimentacao = movimentacoes.get(position);
+                usuarioRef = databaseReference.child("movimentacoes")
+                        .child(idUsuario)
+                        .child(mesAnoSelecionado);
+                movimentacaoRef.child(movimentacao.getKey()).removeValue();
+                adapterMovimentacao.notifyItemRemoved(position);
+                //--------------
+
+                recuperarReceita();
+                recuperarDespesa();
+                //recuperarDespesa();
+                //Recupera o valor da movimentação excluida
+                Double valor = movimentacao.getValor();
+                //recupera o tipo da movimentação excluida
+                String tipo = movimentacao.getTipo();
+                //Verifica o tipo para atualizar o total de receita/ou despesa
+                if (tipo.equals("r")){
+                    usuarioRef = databaseReference.child("usuarios").child(idUsuario);
+                    usuarioRef.child("totalReceita").setValue(receitaTotal - valor);
+                    Toast.makeText(PrincipalActivity.this, "Receita exluida", Toast.LENGTH_LONG).show();
+
+                }else {
+                    usuarioRef = databaseReference.child("usuarios").child(idUsuario);
+                    usuarioRef.child("totalDespesa").setValue(despesaTotal - valor);
+                    Toast.makeText(PrincipalActivity.this, "Despesa exluida", Toast.LENGTH_LONG).show();
+                }
+
+                //--------------
+                recuperarReceita();
+                recuperarDespesa();
+                recuperarSaldo();
+                adapterMovimentacao.notifyDataSetChanged();
+            }
+        });
+        alertDialog.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(PrincipalActivity.this, "Cancelado", Toast.LENGTH_LONG).show();
+                adapterMovimentacao.notifyDataSetChanged();
+            }
+        });
+        AlertDialog alert = alertDialog.create();
+        alert.show();
     }
 
     private void configuraCalendarView() {
