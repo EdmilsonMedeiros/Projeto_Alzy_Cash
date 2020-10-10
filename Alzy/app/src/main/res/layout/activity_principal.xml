@@ -127,10 +127,11 @@
     <LinearLayout
         android:id="@+id/linearLayout10"
         android:layout_width="0dp"
-        android:layout_height="430dp"
+        android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:orientation="vertical"
         android:padding="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout13"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -150,10 +151,16 @@
             app:layout_constraintHorizontal_bias="0.562"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <View
+            android:id="@+id/divider8"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerMovimentos"
             android:layout_width="match_parent"
-            android:layout_height="390dp"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="@+id/textView18"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -178,12 +185,14 @@
         app:layout_constraintStart_toStartOf="@+id/linearLayout4"></com.github.clans.fab.FloatingActionButton>
 
     <LinearLayout
+        android:id="@+id/linearLayout13"
         android:layout_width="0dp"
         android:layout_height="35dp"
-        android:layout_marginBottom="1dp"
         android:orientation="vertical"
+        android:padding="5dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayoutBottom"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
