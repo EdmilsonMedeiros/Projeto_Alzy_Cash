@@ -8,6 +8,7 @@
     <color name="colorPrimaryDefault">#FF5722</color>
     <color name="colorPrimaryDarkDefault">#FF5722</color>
     <color name="colorAccentDefault">#BD590D</color>
+    <color name="colorLightDefault">#FB9F82</color>
 
     <!--Cores despesas:-->
     <color name="colorPrimaryDespesa">#F44336</color>
@@ -26,4 +27,5 @@
 
     <color name="whiteColorAux">#FFF</color>
     <color name="gra_ligh">#E0DCDC</color>
+    <color name="font_light">#646363</color>
 </resources>
