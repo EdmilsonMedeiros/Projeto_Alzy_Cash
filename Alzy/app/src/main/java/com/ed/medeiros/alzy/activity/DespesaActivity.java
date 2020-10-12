@@ -3,12 +3,16 @@ package com.ed.medeiros.alzy.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.os.strictmode.WebViewMethodCalledOnWrongThreadViolation;
-import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ed.medeiros.alzy.R;
@@ -23,27 +27,84 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Calendar;
+
 public class DespesaActivity extends AppCompatActivity {
 
     private FirebaseAuth        autenticacao = FirebaseAuth.getInstance();
     private String              idUsuario = Base64ID.codificarBase64(autenticacao.getCurrentUser().getEmail());
     private DatabaseReference   databaseReference = FirebaseDatabase.getInstance().getReference();
-    private EditText            editData, editCategoria, editDescricao, editValor;
+    private EditText            editCategoria, editDescricao, editValor;
+    private EditText            editData;
+
     private Double              valorRecuperado, despesaTotal;
-    private Movimentacao movimentacao;
+    private Movimentacao        movimentacao;
+    private String              dataPronta;
+
+    //DatePicker:
+    private DatePickerDialog.OnDateSetListener mOnDateSetListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_despesa);
 
-        editValor       = findViewById(R.id.editValorDespesa);
         editData        = findViewById(R.id.editDataDespesa);
+
+        editValor       = findViewById(R.id.editValorDespesa);
         editCategoria   = findViewById(R.id.editCategoriaDespesa);
         editDescricao   = findViewById(R.id.editDescricaoDespesa);
 
-    }
 
+
+        mOnDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int ano, int mes, int dia) {
+                //Formata a data:
+                mes = mes + 1;
+                String diaF, mesF;
+                if (dia < 10){
+                    diaF = "0" + dia;
+                    editData.setText(diaF + "/" + mes + "/" + ano);
+                    if (mes < 10){
+                        mesF = "0" + mes;
+                        editData.setText(dia + "/" + mesF + "/" + ano);
+                        if (dia < 10 && mes < 10){
+                            diaF = "0" + dia;
+                            mesF = "0" + mes;
+                            editData.setText(diaF + "/" + mesF + "/" + ano);
+                        }
+                    }
+                }else {
+                    editData.setText(dia+"/"+mes+"/"+ano);
+                }
+            }
+
+        };
+
+        editData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar calendar = Calendar.getInstance();
+                int dia = calendar.get(Calendar.DAY_OF_MONTH);
+                int mes = calendar.get(Calendar.MONTH);
+                int ano = calendar.get(Calendar.YEAR);
+
+                DatePickerDialog dialog = new DatePickerDialog(
+                        DespesaActivity.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        mOnDateSetListener,
+                        ano, mes, dia
+                );
+                dialog.show();
+            }
+        });
+        //--
+
+    }
+    public void exibeERetornaPicker(View view){
+
+    }
 
     public void recuperarDespesa() {
         DatabaseReference referenceRecuperaDespesa = databaseReference.child("usuarios").child(idUsuario);
@@ -92,7 +153,6 @@ public class DespesaActivity extends AppCompatActivity {
         movimentacao.salvar(data);
     }
 
-
     public void sair(View view){
         finish();
     }
@@ -110,3 +170,4 @@ public class DespesaActivity extends AppCompatActivity {
 
 
 }
+

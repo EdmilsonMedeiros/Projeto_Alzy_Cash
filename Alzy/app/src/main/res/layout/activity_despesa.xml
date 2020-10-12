@@ -129,25 +129,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textAlignment="center"
-            tools:layout_editor_absoluteX="54dp"
-            tools:layout_editor_absoluteY="196dp">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editDataDespesa"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:drawableLeft="@drawable/ic_baseline_calendar_today_despesa_24"
-                android:hint="Data | Ex: 31/12/2019"
-                android:inputType="date"
-                android:padding="10dp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:clickable="true"
+                android:gravity="center"
+                android:textAlignment="center"
+                tools:layout_editor_absoluteX="54dp"
+                tools:layout_editor_absoluteY="196dp"
+                tools:visibility="visible">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editDataDespesa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:clickable="true"
+                    android:drawableLeft="@drawable/ic_baseline_calendar_today_despesa_24"
+                    android:hint="01/12/2019"
+                    android:imeOptions="actionNext"
+                    android:inputType="date"
+                    android:linksClickable="true"
+
+                    android:padding="10dp"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout5"
@@ -188,6 +201,7 @@
                 android:inputType="textCapSentences|textAutoCorrect"
                 android:padding="10dp" />
         </com.google.android.material.textfield.TextInputLayout>
+
     </LinearLayout>
 
 
