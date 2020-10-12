@@ -10,6 +10,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -35,8 +36,8 @@ public class DespesaActivity extends AppCompatActivity {
     private String              idUsuario = Base64ID.codificarBase64(autenticacao.getCurrentUser().getEmail());
     private DatabaseReference   databaseReference = FirebaseDatabase.getInstance().getReference();
     private EditText            editCategoria, editDescricao, editValor;
-    private EditText            editData;
-
+    private TextView            editData;
+    private Button              buttonEditDataDespesa;
     private Double              valorRecuperado, despesaTotal;
     private Movimentacao        movimentacao;
     private String              dataPronta;
@@ -50,10 +51,10 @@ public class DespesaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_despesa);
 
         editData        = findViewById(R.id.editDataDespesa);
-
         editValor       = findViewById(R.id.editValorDespesa);
         editCategoria   = findViewById(R.id.editCategoriaDespesa);
         editDescricao   = findViewById(R.id.editDescricaoDespesa);
+        buttonEditDataDespesa = findViewById(R.id.buttonEditDataDespesa);
 
 
 
@@ -62,27 +63,20 @@ public class DespesaActivity extends AppCompatActivity {
             public void onDateSet(DatePicker datePicker, int ano, int mes, int dia) {
                 //Formata a data:
                 mes = mes + 1;
-                String diaF, mesF;
-                if (dia < 10){
-                    diaF = "0" + dia;
-                    editData.setText(diaF + "/" + mes + "/" + ano);
-                    if (mes < 10){
-                        mesF = "0" + mes;
-                        editData.setText(dia + "/" + mesF + "/" + ano);
-                        if (dia < 10 && mes < 10){
-                            diaF = "0" + dia;
-                            mesF = "0" + mes;
-                            editData.setText(diaF + "/" + mesF + "/" + ano);
-                        }
-                    }
-                }else {
-                    editData.setText(dia+"/"+mes+"/"+ano);
+                if (dia >= 10 && mes >= 10){
+                    dataPronta = dia +"/"+mes+"/"+ano;
+                }if (dia < 10 && mes < 10){
+                    dataPronta = "0"+dia +"/0"+mes+"/"+ano;
+                }if (dia < 10 && mes >= 10){
+                    dataPronta = "0"+dia +"/"+mes+"/"+ano;
+                }if (dia >= 10 && mes < 10){
+                    dataPronta = ""+dia +"/0"+mes+"/"+ano;
                 }
+                editData.setText(dataPronta);
             }
-
         };
 
-        editData.setOnClickListener(new View.OnClickListener() {
+        buttonEditDataDespesa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Calendar calendar = Calendar.getInstance();
@@ -102,9 +96,7 @@ public class DespesaActivity extends AppCompatActivity {
         //--
 
     }
-    public void exibeERetornaPicker(View view){
 
-    }
 
     public void recuperarDespesa() {
         DatabaseReference referenceRecuperaDespesa = databaseReference.child("usuarios").child(idUsuario);

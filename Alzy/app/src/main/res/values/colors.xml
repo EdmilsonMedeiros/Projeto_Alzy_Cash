@@ -28,4 +28,5 @@
     <color name="whiteColorAux">#FFF</color>
     <color name="gra_ligh">#E0DCDC</color>
     <color name="font_light">#646363</color>
+    <color name="font_black">#000000</color>
 </resources>

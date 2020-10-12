@@ -123,41 +123,52 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="1dp"
         android:orientation="vertical"
-        android:padding="5dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout4"
+        <LinearLayout
+
+            android:layout_width="404dp"
+            android:layout_height="50dp"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.221"
+            android:background="@color/mi_icon_color_dark"
+            >
+
+            <Button
+                android:padding="5dp"
+                android:id="@+id/buttonEditDataDespesa"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_baseline_calendar_today_despesa_24"
+                android:text="Selecione"
+                android:background="@color/mi_icon_color_dark"
+                />
+
+            <TextView
+
+                android:id="@+id/editDataDespesa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:clickable="true"
-                android:gravity="center"
-                android:textAlignment="center"
-                tools:layout_editor_absoluteX="54dp"
-                tools:layout_editor_absoluteY="196dp"
-                tools:visibility="visible">
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:padding="5dp"
+                android:text="31/12/2020"
+                android:textColor="@color/font_black"
+                android:textSize="18sp" />
 
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editDataDespesa"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:clickable="true"
-                    android:drawableLeft="@drawable/ic_baseline_calendar_today_despesa_24"
-                    android:hint="01/12/2019"
-                    android:imeOptions="actionNext"
-                    android:inputType="date"
-                    android:linksClickable="true"
-
-                    android:padding="10dp"
-                    android:textSize="18sp" />
-
-            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
 
 
 
@@ -169,7 +180,8 @@
             android:gravity="center"
             android:textAlignment="center"
             tools:layout_editor_absoluteX="54dp"
-            tools:layout_editor_absoluteY="295dp">
+            tools:layout_editor_absoluteY="295dp"
+            android:background="@color/mi_icon_color_dark">
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/editCategoriaDespesa"
@@ -179,7 +191,9 @@
                 android:drawableLeft="@drawable/ic_baseline_category_despesa_24"
                 android:hint="Categoria | Ex: Compras"
                 android:inputType="textCapSentences|textAutoComplete"
-                android:padding="10dp" />
+                android:padding="10dp"
+
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -189,7 +203,8 @@
             android:gravity="center"
             android:textAlignment="center"
             tools:layout_editor_absoluteX="54dp"
-            tools:layout_editor_absoluteY="398dp">
+            tools:layout_editor_absoluteY="398dp"
+            android:background="@color/mi_icon_color_dark">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editDescricaoDespesa"
@@ -199,7 +214,8 @@
                 android:drawableLeft="@drawable/ic_baseline_description_despesa_24"
                 android:hint="Descrição | Ex: Compras do Mês"
                 android:inputType="textCapSentences|textAutoCorrect"
-                android:padding="10dp" />
+                android:padding="10dp"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
