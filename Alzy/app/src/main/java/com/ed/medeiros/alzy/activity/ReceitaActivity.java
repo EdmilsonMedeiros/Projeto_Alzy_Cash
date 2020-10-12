@@ -3,10 +3,14 @@ package com.ed.medeiros.alzy.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ed.medeiros.alzy.R;
@@ -21,14 +25,21 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Calendar;
+
 public class ReceitaActivity extends AppCompatActivity {
 
     private FirebaseAuth autenticacao = FirebaseAuth.getInstance();
     private Double valorRecuperado, receitaTotal;
     private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
-    private EditText editValor, editData, editCategoria, editDescricao;
+    private EditText editValor, editCategoria, editDescricao;
     private String idUsuario = Base64ID.codificarBase64(autenticacao.getCurrentUser().getEmail());
     private Movimentacao movimentacao;
+
+    private String dataPronta;
+    private TextView editData;
+    private DatePickerDialog.OnDateSetListener mOnDateSetListener;
+    private Button buttonEditDataReceita;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +50,44 @@ public class ReceitaActivity extends AppCompatActivity {
         editCategoria = findViewById(R.id.editCategoriaReceita);
         editData = findViewById(R.id.editDataReceita);
         editDescricao = findViewById(R.id.editDescricaoReceita);
+        buttonEditDataReceita = findViewById(R.id.buttonEditDataReceita);
+
+        mOnDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int ano, int mes, int dia) {
+                //Formata a data:
+                mes = mes + 1;
+                if (dia >= 10 && mes >= 10){
+                    dataPronta = dia +"/"+mes+"/"+ano;
+                }if (dia < 10 && mes < 10){
+                    dataPronta = "0"+dia +"/0"+mes+"/"+ano;
+                }if (dia < 10 && mes >= 10){
+                    dataPronta = "0"+dia +"/"+mes+"/"+ano;
+                }if (dia >= 10 && mes < 10){
+                    dataPronta = ""+dia +"/0"+mes+"/"+ano;
+                }
+                editData.setText(dataPronta);
+            }
+        };
+
+        buttonEditDataReceita.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar calendar = Calendar.getInstance();
+                int dia = calendar.get(Calendar.DAY_OF_MONTH);
+                int mes = calendar.get(Calendar.MONTH);
+                int ano = calendar.get(Calendar.YEAR);
+
+                DatePickerDialog dialog = new DatePickerDialog(
+                        ReceitaActivity.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        mOnDateSetListener,
+                        ano, mes, dia
+                );
+                dialog.show();
+            }
+        });
+        //--
 
 
 
