@@ -6,9 +6,9 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Movimentacao {
 
-    private FirebaseAuth autenticacao = FirebaseAuth.getInstance();
-    private String data, categoria, descricao, tipo, key;
-    private Double valor, despesaMes, receitaMes;
+    private FirebaseAuth    autenticacao = FirebaseAuth.getInstance();
+    private String          data, categoria, descricao, tipo, key;
+    private Double          valor, despesaMes, receitaMes;
 
     public Movimentacao(){
 
