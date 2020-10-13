@@ -39,7 +39,7 @@ public class ReceitaActivity extends AppCompatActivity {
     private String dataPronta;
     private TextView editData;
     private DatePickerDialog.OnDateSetListener mOnDateSetListener;
-    private Button buttonEditDataReceita;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +50,7 @@ public class ReceitaActivity extends AppCompatActivity {
         editCategoria = findViewById(R.id.editCategoriaReceita);
         editData = findViewById(R.id.editDataReceita);
         editDescricao = findViewById(R.id.editDescricaoReceita);
-        buttonEditDataReceita = findViewById(R.id.buttonEditDataReceita);
+
 
         mOnDateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -70,7 +70,7 @@ public class ReceitaActivity extends AppCompatActivity {
             }
         };
 
-        buttonEditDataReceita.setOnClickListener(new View.OnClickListener() {
+        editData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Calendar calendar = Calendar.getInstance();

@@ -38,7 +38,7 @@ public class DespesaActivity extends AppCompatActivity {
     private DatabaseReference   databaseReference = FirebaseDatabase.getInstance().getReference();
     private EditText            editCategoria, editDescricao, editValor;
     private TextView            editData;
-    private Button              buttonEditDataDespesa;
+
     private Double              valorRecuperado, despesaTotal;
     private Movimentacao        movimentacao;
     private String              dataPronta;
@@ -55,7 +55,7 @@ public class DespesaActivity extends AppCompatActivity {
         editValor       = findViewById(R.id.editValorDespesa);
         editCategoria   = findViewById(R.id.editCategoriaDespesa);
         editDescricao   = findViewById(R.id.editDescricaoDespesa);
-        buttonEditDataDespesa = findViewById(R.id.buttonEditDataDespesa);
+
 
 
 
@@ -77,7 +77,7 @@ public class DespesaActivity extends AppCompatActivity {
             }
         };
 
-        buttonEditDataDespesa.setOnClickListener(new View.OnClickListener() {
+        editData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Calendar calendar = Calendar.getInstance();
