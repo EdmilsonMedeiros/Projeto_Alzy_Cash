@@ -36,14 +36,13 @@ public class DespesaActivity extends AppCompatActivity {
     private FirebaseAuth        autenticacao = FirebaseAuth.getInstance();
     private String              idUsuario = Base64ID.codificarBase64(autenticacao.getCurrentUser().getEmail());
     private DatabaseReference   databaseReference = FirebaseDatabase.getInstance().getReference();
-    private EditText            editCategoria, editDescricao, editValor;
-    private TextView            editData;
 
+    private EditText            editCategoria, editDescricao, editValor;
     private Double              valorRecuperado, despesaTotal;
     private Movimentacao        movimentacao;
-    private String              dataPronta;
 
-    //DatePicker:
+    private TextView            editData;
+    private String              dataPronta;
     private DatePickerDialog.OnDateSetListener mOnDateSetListener;
 
     @Override
@@ -55,9 +54,6 @@ public class DespesaActivity extends AppCompatActivity {
         editValor       = findViewById(R.id.editValorDespesa);
         editCategoria   = findViewById(R.id.editCategoriaDespesa);
         editDescricao   = findViewById(R.id.editDescricaoDespesa);
-
-
-
 
         mOnDateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override

@@ -129,9 +129,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
-
-
-
             <TextView
 
                 android:id="@+id/editDataDespesa"
@@ -145,11 +142,6 @@
                 android:text="31/12/2020"
                 android:textColor="@color/font_black"
                 android:textSize="18sp" />
-
-
-
-
-
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout5"

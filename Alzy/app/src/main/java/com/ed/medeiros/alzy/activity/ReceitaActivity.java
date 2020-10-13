@@ -29,15 +29,16 @@ import java.util.Calendar;
 
 public class ReceitaActivity extends AppCompatActivity {
 
-    private FirebaseAuth autenticacao = FirebaseAuth.getInstance();
-    private Double valorRecuperado, receitaTotal;
-    private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
-    private EditText editValor, editCategoria, editDescricao;
-    private String idUsuario = Base64ID.codificarBase64(autenticacao.getCurrentUser().getEmail());
-    private Movimentacao movimentacao;
+    private FirebaseAuth        autenticacao = FirebaseAuth.getInstance();
+    private DatabaseReference   databaseReference = FirebaseDatabase.getInstance().getReference();
+    private String              idUsuario = Base64ID.codificarBase64(autenticacao.getCurrentUser().getEmail());
 
-    private String dataPronta;
-    private TextView editData;
+    private Movimentacao        movimentacao;
+    private Double              valorRecuperado, receitaTotal;
+    private EditText            editValor, editCategoria, editDescricao;
+
+    private String              dataPronta;
+    private TextView            editData;
     private DatePickerDialog.OnDateSetListener mOnDateSetListener;
 
 
@@ -46,10 +47,10 @@ public class ReceitaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receita);
 
-        editValor = findViewById(R.id.editValorReceita);
-        editCategoria = findViewById(R.id.editCategoriaReceita);
-        editData = findViewById(R.id.editDataReceita);
-        editDescricao = findViewById(R.id.editDescricaoReceita);
+        editValor       = findViewById(R.id.editValorReceita);
+        editCategoria   = findViewById(R.id.editCategoriaReceita);
+        editData        = findViewById(R.id.editDataReceita);
+        editDescricao   = findViewById(R.id.editDescricaoReceita);
 
 
         mOnDateSetListener = new DatePickerDialog.OnDateSetListener() {
@@ -89,9 +90,6 @@ public class ReceitaActivity extends AppCompatActivity {
             }
         });
         //--
-
-
-
     }
     public void recuperarReceita() {
         DatabaseReference referenceRecuperaReceita = databaseReference.child("usuarios").child(idUsuario);
