@@ -11,8 +11,8 @@ import com.ed.medeiros.alzy.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class AlteraSenhaActivity extends AppCompatActivity {
-    private FirebaseAuth autenticacao = FirebaseAuth.getInstance();
-    private TextView textViewEmail;
+    private FirebaseAuth    autenticacao = FirebaseAuth.getInstance();
+    private TextView        textViewEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

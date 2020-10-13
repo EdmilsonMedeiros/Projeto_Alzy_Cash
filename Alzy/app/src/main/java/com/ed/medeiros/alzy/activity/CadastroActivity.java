@@ -25,11 +25,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class CadastroActivity extends AppCompatActivity {
-    private ProgressBar progressBarCircle;
-    private EditText campoUsuario, campoEmail, campoSenha;
-    private FirebaseAuth autenticacao = FirebaseAuth.getInstance();
-    private int contadorProgress = 0;
-    private Usuario  usuario;
+    private ProgressBar     progressBarCircle;
+    private EditText        campoUsuario, campoEmail, campoSenha;
+    private FirebaseAuth    autenticacao = FirebaseAuth.getInstance();
+    private int             contadorProgress = 0;
+    private Usuario         usuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,9 +47,9 @@ public class CadastroActivity extends AppCompatActivity {
     public void validarECadastrarUsuario(View view){
 
         if (isOnline()){
-            String nome = campoUsuario.getText().toString();
-            String email = campoEmail.getText().toString();
-            String senha = campoSenha.getText().toString();
+            String nome     = campoUsuario.getText().toString();
+            String email    = campoEmail.getText().toString();
+            String senha    = campoSenha.getText().toString();
             if (nome.equals("") || email.equals("") || senha.equals("")){
                 Toast.makeText(this, "Preencha todos os campos!!", Toast.LENGTH_LONG).show();
 

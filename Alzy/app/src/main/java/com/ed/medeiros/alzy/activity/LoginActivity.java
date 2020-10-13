@@ -21,9 +21,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
-    private FirebaseAuth autenticacao = FirebaseAuth.getInstance();
-    private ProgressBar progressBarCircle;
-    private EditText editEmail, editSenha;
+    private FirebaseAuth    autenticacao = FirebaseAuth.getInstance();
+    private ProgressBar     progressBarCircle;
+    private EditText        editEmail, editSenha;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

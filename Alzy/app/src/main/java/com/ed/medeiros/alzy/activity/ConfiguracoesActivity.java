@@ -10,7 +10,7 @@ import com.ed.medeiros.alzy.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ConfiguracoesActivity extends AppCompatActivity {
-    FirebaseAuth autenticacao = FirebaseAuth.getInstance();
+    FirebaseAuth    autenticacao = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
