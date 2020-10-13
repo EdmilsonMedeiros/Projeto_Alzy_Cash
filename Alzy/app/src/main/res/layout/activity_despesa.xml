@@ -134,7 +134,7 @@
 
             android:layout_width="404dp"
             android:layout_height="50dp"
-            android:padding="5dp"
+            android:padding="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -145,7 +145,7 @@
             >
 
             <Button
-                android:padding="5dp"
+
                 android:id="@+id/buttonEditDataDespesa"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

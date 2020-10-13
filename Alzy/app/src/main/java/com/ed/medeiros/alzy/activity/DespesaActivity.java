@@ -7,6 +7,7 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -90,6 +91,7 @@ public class DespesaActivity extends AppCompatActivity {
                         mOnDateSetListener,
                         ano, mes, dia
                 );
+                dialog.getWindow().setBackgroundDrawable(getDrawable(android.R.color.transparent));
                 dialog.show();
             }
         });

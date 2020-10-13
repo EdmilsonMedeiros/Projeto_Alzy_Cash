@@ -84,6 +84,7 @@ public class ReceitaActivity extends AppCompatActivity {
                         mOnDateSetListener,
                         ano, mes, dia
                 );
+                dialog.getWindow().setBackgroundDrawable(getDrawable(android.R.color.transparent));
                 dialog.show();
             }
         });
