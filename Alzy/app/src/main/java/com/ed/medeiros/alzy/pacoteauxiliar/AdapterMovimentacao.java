@@ -5,13 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
-
 import com.ed.medeiros.alzy.R;
-
 import java.util.List;
 
 public class AdapterMovimentacao extends RecyclerView.Adapter<AdapterMovimentacao.MyViewHolder> {
@@ -23,14 +19,11 @@ public class AdapterMovimentacao extends RecyclerView.Adapter<AdapterMovimentaca
         this.movimentacoes = movimentacoes;
         this.context = context;
     }
-
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemLista = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_movimentacao, parent, false);
         return new MyViewHolder(itemLista);
     }
-
-
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Movimentacao movimentacao = movimentacoes.get(position);
@@ -52,8 +45,6 @@ public class AdapterMovimentacao extends RecyclerView.Adapter<AdapterMovimentaca
             holder.cardMovimentacao.setCardBackgroundColor(context.getResources().getColor(R.color.colorCardReceita));
         }
     }
-
-
     @Override
     public int getItemCount() {
         return movimentacoes.size();

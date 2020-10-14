@@ -142,27 +142,16 @@
             android:textColor="@color/font_black"
             android:textSize="18sp"/>
 
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textAlignment="center"
-            tools:layout_editor_absoluteX="54dp"
-            tools:layout_editor_absoluteY="295dp"
-            android:background="@color/mi_icon_color_dark">
-
-            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            <TextView
                 android:id="@+id/editCategoriaReceita"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:drawableLeft="@drawable/ic_baseline_category_despesa_24"
                 android:hint="Categoria | Ex: Salário"
-                android:inputType="textCapSentences|textAutoComplete"
-                android:padding="10dp" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:textSize="18sp"
+                android:onClick="irTelaCategorias"
+                android:drawableLeft="@drawable/ic_baseline_category_24"
+                android:padding="10dp"/>
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout6"

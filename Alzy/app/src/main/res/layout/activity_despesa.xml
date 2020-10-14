@@ -123,7 +123,6 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="1dp"
         android:orientation="vertical"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -151,7 +150,8 @@
             android:textAlignment="center"
             tools:layout_editor_absoluteX="54dp"
             tools:layout_editor_absoluteY="295dp"
-            android:background="@color/mi_icon_color_dark">
+            android:background="@color/mi_icon_color_dark"
+            >
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/editCategoriaDespesa"
@@ -162,7 +162,6 @@
                 android:hint="Categoria | Ex: Compras"
                 android:inputType="textCapSentences|textAutoComplete"
                 android:padding="10dp"
-
                 />
         </com.google.android.material.textfield.TextInputLayout>
 

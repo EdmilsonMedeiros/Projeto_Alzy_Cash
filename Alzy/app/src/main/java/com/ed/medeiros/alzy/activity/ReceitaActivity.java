@@ -18,6 +18,7 @@ import com.ed.medeiros.alzy.pacoteauxiliar.Base64ID;
 import com.ed.medeiros.alzy.pacoteauxiliar.DataCustomizada;
 import com.ed.medeiros.alzy.pacoteauxiliar.Movimentacao;
 import com.ed.medeiros.alzy.pacoteauxiliar.Usuario;
+import com.google.android.material.textview.MaterialTextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -35,10 +36,10 @@ public class ReceitaActivity extends AppCompatActivity {
 
     private Movimentacao        movimentacao;
     private Double              valorRecuperado, receitaTotal;
-    private EditText            editValor, editCategoria, editDescricao;
+    private EditText            editValor, editDescricao;
 
     private String              dataPronta;
-    private TextView            editData;
+    private TextView            editData, editCategoria;
     private DatePickerDialog.OnDateSetListener mOnDateSetListener;
 
 
@@ -142,6 +143,9 @@ public class ReceitaActivity extends AppCompatActivity {
 
     public void sair(View view){
         finish();
+    }
+    public void irTelaCategorias(View view){
+        startActivity(new Intent(this, CategoriasActivity.class));
     }
 
     @Override
