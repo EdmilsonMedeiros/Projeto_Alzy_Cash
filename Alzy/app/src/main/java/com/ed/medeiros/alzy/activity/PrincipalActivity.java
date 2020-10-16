@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +21,8 @@ import com.ed.medeiros.alzy.pacoteauxiliar.AdapterMovimentacao;
 import com.ed.medeiros.alzy.pacoteauxiliar.Base64ID;
 import com.ed.medeiros.alzy.pacoteauxiliar.Movimentacao;
 import com.ed.medeiros.alzy.pacoteauxiliar.Usuario;
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -53,6 +56,11 @@ public class PrincipalActivity extends AppCompatActivity {
     private ValueEventListener      valueEventListenerMovimentacoes;
     private DatabaseReference       usuarioRef = FirebaseDatabase.getInstance().getReference();
 
+    private LinearLayout            linearLayoutTopo;
+    private LinearLayout            linearLayoutBottom;
+    private FloatingActionButton    fb_voltar;
+    private FloatingActionMenu      floatingActionMenu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +72,12 @@ public class PrincipalActivity extends AppCompatActivity {
         textSaldo           = findViewById(R.id.textSaldo);
         textBoasVindas      = findViewById(R.id.textBemVindo);
         recyclerView        = findViewById(R.id.recyclerMovimentos);
+        linearLayoutTopo    = findViewById(R.id.linearLayoutTopo);
+        linearLayoutBottom  = findViewById(R.id.linearLayoutBottom);
+        fb_voltar           = findViewById(R.id.fb_voltar);
+        floatingActionMenu  = findViewById(R.id.floatingActionMenu);
+
+
 
 
         adapterMovimentacao = new AdapterMovimentacao(movimentacoes, this);
