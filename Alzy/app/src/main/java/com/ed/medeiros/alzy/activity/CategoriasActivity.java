@@ -42,17 +42,17 @@ public class CategoriasActivity extends AppCompatActivity {
 
             }
         });
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
 
 
     }
 
     private List<Categorias> GetDate() {
         lst = new ArrayList<>();
-        lst.add(new Categorias("Salário", R.mipmap.salario));
-        lst.add(new Categorias("Extra", R.mipmap.salario));
-        lst.add(new Categorias("Poupança", R.mipmap.salario));
-        lst.add(new Categorias("Bonificação", R.mipmap.salario));
+        lst.add(new Categorias("Salário", R.mipmap.ic_nota));
+        lst.add(new Categorias("Extra", R.mipmap.ic_extra));
+        lst.add(new Categorias("Poupança", R.mipmap.ic_poupanca));
+        lst.add(new Categorias("Bonificação", R.mipmap.ic_bonificacao));
         return lst;
     }
 
