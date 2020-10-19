@@ -4,31 +4,33 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.ed.medeiros.alzy.R;
 import com.ed.medeiros.alzy.pacoteauxiliar.AdapterListViewCategorias;
+import com.ed.medeiros.alzy.pacoteauxiliar.Base64ID;
 import com.ed.medeiros.alzy.pacoteauxiliar.Categorias;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoriasActivity extends AppCompatActivity {
+public class CategoriasActivityReceita extends AppCompatActivity {
 
-    private ListView listView;
-    private List<Categorias> lst;
+    private String              idUsuario = Base64ID.codificarBase64(FirebaseAuth.getInstance().getCurrentUser().getEmail());
+    private DatabaseReference   databaseReference = FirebaseDatabase.getInstance().getReference();
+    private ListView            listView;
+    private List<Categorias>    lst;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_categorias);
+        setContentView(R.layout.activity_categorias_receita);
 
         listView = findViewById(R.id.listViewCategorias);
 

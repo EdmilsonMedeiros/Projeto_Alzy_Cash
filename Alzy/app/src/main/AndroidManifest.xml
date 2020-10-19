@@ -12,7 +12,7 @@
 
         <activity android:name=".pacoteauxiliar.AdapterMovimentacao" />
 
-        <activity android:name=".activity.CategoriasActivity"
+        <activity android:name=".activity.CategoriasActivityReceita"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeDefault" />
 

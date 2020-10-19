@@ -7,7 +7,6 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,7 +17,6 @@ import com.ed.medeiros.alzy.pacoteauxiliar.Base64ID;
 import com.ed.medeiros.alzy.pacoteauxiliar.DataCustomizada;
 import com.ed.medeiros.alzy.pacoteauxiliar.Movimentacao;
 import com.ed.medeiros.alzy.pacoteauxiliar.Usuario;
-import com.google.android.material.textview.MaterialTextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -145,7 +143,7 @@ public class ReceitaActivity extends AppCompatActivity {
         finish();
     }
     public void irTelaCategorias(View view){
-        startActivity(new Intent(this, CategoriasActivity.class));
+        startActivity(new Intent(this, CategoriasActivityReceita.class));
     }
 
     @Override
