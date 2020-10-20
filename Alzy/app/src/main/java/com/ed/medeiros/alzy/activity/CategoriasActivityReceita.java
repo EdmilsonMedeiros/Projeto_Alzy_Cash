@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,6 +15,7 @@ import com.ed.medeiros.alzy.R;
 import com.ed.medeiros.alzy.pacoteauxiliar.AdapterListViewCategorias;
 import com.ed.medeiros.alzy.pacoteauxiliar.Base64ID;
 import com.ed.medeiros.alzy.pacoteauxiliar.Categorias;
+import com.ed.medeiros.alzy.pacoteauxiliar.CategoriasDatabase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,6 +32,7 @@ public class CategoriasActivityReceita extends AppCompatActivity {
     private DatabaseReference   databaseReference = FirebaseDatabase.getInstance().getReference();
     private DatabaseReference   categoriasRef;
     private ValueEventListener  valueEventListenerCategorias;
+    private String              categoriaRetornada;
 
     private ListView            listView;
     private List<Categorias>    lst;
@@ -42,33 +45,35 @@ public class CategoriasActivityReceita extends AppCompatActivity {
 
         listView = findViewById(R.id.listViewCategorias);
 
-        AdapterListViewCategorias adapterListViewCategorias = new AdapterListViewCategorias(this, GetDate());
-        listView.setAdapter(adapterListViewCategorias);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Categorias c = lst.get(i);
-                Toast.makeText(getBaseContext(), c.getNome(), Toast.LENGTH_LONG).show();
 
-            }
-        });
 
 
 
     }
     private void retornaCategoriasReceita(){
-        categoriasRef = databaseReference.child("categorias").child(idUsuario).child("receitas");
 
-        categoriasRef.addValueEventListener(new ValueEventListener() {
+        categoriasRef = databaseReference.child("categorias")
+                .child(idUsuario)
+                .child("receitas");
+
+        valueEventListenerCategorias = categoriasRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot categorias : dataSnapshot.getChildren()){
-                    Categorias categoriasRetorno = categorias.getValue(Categorias.class);
+                CategoriasDatabase categoriasDatabase = dataSnapshot.getValue(CategoriasDatabase.class);
+                categoriaRetornada = categoriasDatabase.getNome();
+                Log.i("CAT", categoriaRetornada);
 
-                    String categoriaRetornada = categoriasRetorno.getNome();
-                    Log.i("CAT", categoriaRetornada);
+                AdapterListViewCategorias adapterListViewCategorias = new AdapterListViewCategorias(getApplicationContext(), GetDate());
+                listView.setAdapter(adapterListViewCategorias);
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Categorias c = lst.get(i);
+                        Toast.makeText(getBaseContext(), c.getNome(), Toast.LENGTH_LONG).show();
 
-                }
+                    }
+                });
+
             }
 
             @Override
@@ -80,16 +85,14 @@ public class CategoriasActivityReceita extends AppCompatActivity {
 
     private List<Categorias> GetDate() {
         lst = new ArrayList<>();
-        lst.add(new Categorias("Salário", R.mipmap.ic_nota));
-        lst.add(new Categorias("Extra", R.mipmap.ic_extra));
-        lst.add(new Categorias("Poupança", R.mipmap.ic_poupanca));
-        lst.add(new Categorias("Bonificação", R.mipmap.ic_bonificacao));
+        lst.add(new Categorias(categoriaRetornada, R.mipmap.ic_nota));
         return lst;
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+        retornaCategoriasReceita();
 
     }
 
