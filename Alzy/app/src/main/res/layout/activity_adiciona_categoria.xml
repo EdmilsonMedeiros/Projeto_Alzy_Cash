@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.AdicionaCategoriaActivity">
+    tools:context=".activity.AdicionaCategoriaActivity"
+    >
 
     <LinearLayout
         android:id="@+id/topo"
@@ -33,7 +34,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:orientation="vertical"
-        android:padding="5dp"
+        android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,18 +49,7 @@
             android:textColor="#F44336"
             android:textSize="14sp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:text="Tipo:"
-            android:textSize="18sp" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ediTipo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textAutoComplete"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -73,6 +63,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textAutoComplete"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Tipo:"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinnerTipo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/tipo_array"
+                android:scrollbarSize="4dp"
+                android:padding="10dp"
+
+                />
+
+        </LinearLayout>
 
         <TextView
 

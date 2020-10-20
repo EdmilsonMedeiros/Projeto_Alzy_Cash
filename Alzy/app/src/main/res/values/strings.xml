@@ -23,4 +23,9 @@
     <string name="atualizar_senha">Atualizar Senha</string>
     <string name="e_mail">E-mail</string>
     <string name="alterar_e_mail">Alterar E-mail</string>
+
+    <string-array name="tipo_array">
+        <item>Receita</item>
+        <item>Despesa</item>
+    </string-array>
 </resources>

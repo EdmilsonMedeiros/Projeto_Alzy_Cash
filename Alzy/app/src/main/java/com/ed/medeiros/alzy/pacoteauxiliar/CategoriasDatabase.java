@@ -1,9 +1,33 @@
 package com.ed.medeiros.alzy.pacoteauxiliar;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class CategoriasDatabase {
-    String nome, key;
+    FirebaseAuth autenticacao = FirebaseAuth.getInstance();
+    String idUsuario = Base64ID.codificarBase64(autenticacao.getCurrentUser().getEmail());
+    DatabaseReference firebaseDatabaseRef = FirebaseDatabase.getInstance().getReference();
+
+    String nome, imagem, key;
 
     public CategoriasDatabase() {
+
+    }
+
+    public void salvar(){
+        firebaseDatabaseRef.child("categorias")
+                .child(idUsuario)
+                .push()
+                .setValue(this);
+    }
+
+    public String getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
     }
 
     public String getNome() {
