@@ -1,7 +1,7 @@
 package com.ed.medeiros.alzy.pacoteauxiliar;
 
 public class Categorias {
-    String nome;
+    String nome, key;
     int imagem;
 
     public Categorias(String nome, int imagem) {
@@ -9,6 +9,13 @@ public class Categorias {
         this.imagem = imagem;
     }
 
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     public String getNome() {
         return nome;
@@ -18,6 +25,7 @@ public class Categorias {
         this.nome = nome;
     }
 
+
     public int getImagem() {
         return imagem;
     }
@@ -25,4 +33,6 @@ public class Categorias {
     public void setImagem(int imagem) {
         this.imagem = imagem;
     }
+
+
 }
