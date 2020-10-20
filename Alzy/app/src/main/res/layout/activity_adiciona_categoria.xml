@@ -42,13 +42,16 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="10dp"
             android:text="* Todos os campos são obrigatórios:"
-            android:textSize="18sp"
-            android:textColor="#F44336"/>
+            android:textAlignment="center"
+            android:textColor="#F44336"
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             android:text="Tipo:"
             android:textSize="18sp" />
 
@@ -59,10 +62,11 @@
             android:inputType="textAutoComplete"/>
 
         <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nome:"
-        android:textSize="18sp" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Nome:"
+            android:textSize="18sp" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editNome"
@@ -74,6 +78,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             android:text="Imagem:"
             android:textSize="18sp" />
 
@@ -81,9 +86,7 @@
             android:id="@+id/editImagem"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src=""
-
-            app:srcCompat="@android:drawable/ic_menu_camera" />
+            app:srcCompat="@mipmap/ic_camera" />
 
     </LinearLayout>
 

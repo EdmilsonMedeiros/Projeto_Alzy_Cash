@@ -36,6 +36,9 @@ public class ConfiguracoesActivity extends AppCompatActivity {
     public void irTelaReport(View view){
         startActivity(new Intent(this, ReportActivity.class));
     }
+    public void irTelaAdcionarCategoria(View view){
+        startActivity(new Intent(this, AdicionaCategoriaActivity.class));
+    }
     public void logOut(View view){
         if (autenticacao != null){
             autenticacao.signOut();
