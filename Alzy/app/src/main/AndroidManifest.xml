@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_carteira"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.AdicionaCategoriaActivity"
+        <activity
+            android:name=".activity.AdicionaCategoriaActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeDefault"/>
+            android:theme="@style/AppThemeDefault" />
         <activity android:name=".pacoteauxiliar.AdapterMovimentacao" />
         <activity
             android:name=".activity.CategoriasActivityReceita"

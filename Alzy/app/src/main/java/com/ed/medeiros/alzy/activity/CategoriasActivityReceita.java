@@ -3,12 +3,18 @@ package com.ed.medeiros.alzy.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import com.ed.medeiros.alzy.R;
@@ -34,6 +40,7 @@ public class CategoriasActivityReceita extends AppCompatActivity {
     private ValueEventListener  valueEventListenerCategorias;
     private String              categoriaRetornada;
 
+
     private ListView            listView;
     private List<Categorias>    lst;
 
@@ -46,10 +53,8 @@ public class CategoriasActivityReceita extends AppCompatActivity {
         listView = findViewById(R.id.listViewCategorias);
 
 
-
-
-
     }
+
     private void retornaCategoriasReceita(){
 
         categoriasRef = databaseReference.child("categorias")

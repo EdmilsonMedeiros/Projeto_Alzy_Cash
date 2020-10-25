@@ -101,6 +101,7 @@
             android:id="@+id/editImagem"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:onClick="ShowDialog"
             app:srcCompat="@mipmap/ic_camera" />
 
     </LinearLayout>
