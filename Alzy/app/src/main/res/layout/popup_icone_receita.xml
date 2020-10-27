@@ -10,8 +10,6 @@
     android:padding="10dp"
     tools:context=".activity.AdicionaCategoriaActivity">
 
-
-
     <TextView
         android:id="@+id/textFechar"
         android:layout_width="27dp"
@@ -46,30 +44,31 @@
 
         <ImageView
             android:layout_margin="5dp"
-            android:id="@+id/imageView"
+            android:id="@+id/ic_poupanca"
             android:layout_width="50dp"
             android:layout_height="50dp"
             app:srcCompat="@mipmap/ic_poupanca" />
 
         <ImageView
             android:layout_margin="5dp"
-            android:id="@+id/imageView2"
+            android:id="@+id/ic_nota"
             android:layout_width="50dp"
             android:layout_height="50dp"
             app:srcCompat="@mipmap/ic_nota" />
 
         <ImageView
             android:layout_margin="5dp"
-            android:id="@+id/imageView3"
+            android:id="@+id/ic_bonificacao"
             android:layout_width="50dp"
             android:layout_height="50dp"
             app:srcCompat="@mipmap/ic_bonificacao" />
 
         <ImageView
-            android:layout_margin="5dp"
-            android:id="@+id/imageView4"
+            android:id="@+id/ic_extra"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:onClick="iExtra"
             app:srcCompat="@mipmap/ic_extra" />
 
 
@@ -82,27 +81,27 @@
         android:padding="5dp">
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/ic_cifrao"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
             app:srcCompat="@mipmap/ic_cifrao"/>
         <ImageView
-            android:id="@+id/imageView6"
+            android:id="@+id/ic_compras"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
             app:srcCompat="@mipmap/ic_compras"/>
 
         <ImageView
-            android:id="@+id/imageView7"
+            android:id="@+id/ic_casa"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
             app:srcCompat="@mipmap/ic_casa" />
 
         <ImageView
-            android:id="@+id/imageView8"
+            android:id="@+id/ic_geral"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
@@ -118,27 +117,27 @@
         android:padding="5dp">
 
         <ImageView
-            android:id="@+id/imageView9"
+            android:id="@+id/ic_carro"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
             app:srcCompat="@mipmap/ic_carro"/>
         <ImageView
-            android:id="@+id/imageView10"
+            android:id="@+id/ic_esporte"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
             app:srcCompat="@mipmap/ic_esporte"/>
 
         <ImageView
-            android:id="@+id/imageView11"
+            android:id="@+id/ic_presente"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
             app:srcCompat="@mipmap/ic_presente" />
 
         <ImageView
-            android:id="@+id/imageView12"
+            android:id="@+id/ic_roupa"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
@@ -153,28 +152,28 @@
         android:padding="5dp">
 
         <ImageView
-            android:id="@+id/imageView13"
+            android:id="@+id/ic_entretenimento"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
             app:srcCompat="@mipmap/ic_entretenimento" />
 
         <ImageView
-            android:id="@+id/imageView14"
+            android:id="@+id/ic_ferias"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
             app:srcCompat="@mipmap/ic_ferias" />
 
         <ImageView
-            android:id="@+id/imageView15"
+            android:id="@+id/ic_saude"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
             app:srcCompat="@mipmap/ic_saude" />
 
         <ImageView
-            android:id="@+id/imageView16"
+            android:id="@+id/ic_contas"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
@@ -190,28 +189,28 @@
         android:padding="5dp">
 
         <ImageView
-            android:id="@+id/imageView17"
+            android:id="@+id/ic_lanche"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
             app:srcCompat="@mipmap/ic_lanche" />
 
         <ImageView
-            android:id="@+id/imageView18"
+            android:id="@+id/ic_comida"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
             app:srcCompat="@mipmap/ic_comida" />
 
         <ImageView
-            android:id="@+id/imageView19"
+            android:id="@+id/ic_viagem"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
             app:srcCompat="@mipmap/ic_viagem" />
 
         <ImageView
-            android:id="@+id/imageView20"
+            android:id="@+id/ic_transporte"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
@@ -227,7 +226,7 @@
         android:padding="5dp">
 
         <ImageView
-            android:id="@+id/imageView21"
+            android:id="@+id/ic_livro"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
