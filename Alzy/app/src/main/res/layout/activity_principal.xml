@@ -7,6 +7,16 @@
     android:background="@color/whiteColorAux"
     tools:context=".activity.PrincipalActivity">
 
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_carteira_light" />
+
     <LinearLayout
         android:id="@+id/linearLayoutBottom"
         android:layout_width="0dp"
@@ -190,7 +200,7 @@
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:orientation="vertical"
-        android:padding="5dp"
+        android:padding="0dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayoutBottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
