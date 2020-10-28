@@ -9,7 +9,7 @@ public class CategoriasDatabase {
     String idUsuario = Base64ID.codificarBase64(autenticacao.getCurrentUser().getEmail());
     DatabaseReference firebaseDatabaseRef = FirebaseDatabase.getInstance().getReference();
 
-    String nome, imagem, key;
+    String nome, imagem, tipo, key;
 
     public CategoriasDatabase() {
 
@@ -20,6 +20,14 @@ public class CategoriasDatabase {
                 .child(idUsuario)
                 .push()
                 .setValue(this);
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public String getImagem() {

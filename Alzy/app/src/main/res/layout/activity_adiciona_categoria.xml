@@ -59,7 +59,7 @@
             android:textSize="18sp" />
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editNome"
+            android:id="@+id/editNomeCategoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textAutoComplete|textCapWords"/>
@@ -146,8 +146,9 @@
         android:id="@+id/floatingActionButtonAddCategoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:fab_colorNormal="@color/colorPrimaryDarkDefault"
+        android:onClick="validarCamposCategoria"
         android:src="@drawable/mi_ic_finish"
+        app:fab_colorNormal="@color/colorPrimaryDarkDefault"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

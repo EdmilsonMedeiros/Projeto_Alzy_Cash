@@ -7,10 +7,15 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ed.medeiros.alzy.R;
+import com.ed.medeiros.alzy.pacoteauxiliar.CategoriasDatabase;
 
 public class AdicionaCategoriaActivity extends AppCompatActivity {
 
@@ -40,6 +45,10 @@ public class AdicionaCategoriaActivity extends AppCompatActivity {
 
     private TextView text_icone;
     private ImageView editImagem;
+    private Spinner spinnerTipo;
+    private CategoriasDatabase novaCategoriasDatabase;
+    private EditText editNomeCategoria;
+    private String tipo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +58,25 @@ public class AdicionaCategoriaActivity extends AppCompatActivity {
         myDialog            = new Dialog(this);
         editImagem          = findViewById(R.id.editImagem);
         text_icone          = findViewById(R.id.text_icone);
-
-
+        editNomeCategoria   = findViewById(R.id.editNomeCategoria);
+        spinnerTipo         = findViewById(R.id.spinnerTipo);
 
         //----------------------------------------------------------
+        spinnerTipo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                tipo = spinnerTipo.getSelectedItem().toString();
+                Toast.makeText(AdicionaCategoriaActivity.this, "Selecionado: " + tipo, Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
 
     }
 
@@ -291,5 +315,53 @@ public class AdicionaCategoriaActivity extends AppCompatActivity {
 
     public void sair(View view){
         finish();
+    }
+
+    public void funcaoTeste(View v){
+        String tipoFinal;
+        if (tipo.equals("Despesa")){
+            tipoFinal = "d";
+            Toast.makeText(this, "Selecionado: " + tipoFinal, Toast.LENGTH_SHORT).show();
+        }
+        if (tipo.equals("Receita")){
+            tipoFinal = "r";
+            Toast.makeText(this, "Selecionado: " + tipoFinal, Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    public void validarCamposCategoria(View view){
+        if (editNomeCategoria.getText().toString().equals("") || text_icone.getText().toString().equals("Ícone")){
+            Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
+        }else {
+            criarESalvarCategoria();
+        }
+    }
+
+    public void criarESalvarCategoria(){
+        String tipoFinal;
+        if (tipo.equals("Despesa")){
+            tipoFinal = "d";
+            novaCategoriasDatabase = new CategoriasDatabase();
+            novaCategoriasDatabase.setNome(editNomeCategoria.getText().toString());
+            novaCategoriasDatabase.setImagem(text_icone.getText().toString());
+            novaCategoriasDatabase.setTipo(tipoFinal);
+            novaCategoriasDatabase.salvar();
+            Toast.makeText(this, "Categoria salva!", Toast.LENGTH_SHORT).show();
+            finish();
+        }
+        if (tipo.equals("Receita")){
+            tipoFinal = "r";
+            novaCategoriasDatabase = new CategoriasDatabase();
+            novaCategoriasDatabase.setNome(editNomeCategoria.getText().toString());
+            novaCategoriasDatabase.setImagem(text_icone.getText().toString());
+            novaCategoriasDatabase.setTipo(tipoFinal);
+            novaCategoriasDatabase.salvar();
+            Toast.makeText(this, "Categoria salva!", Toast.LENGTH_SHORT).show();
+            finish();
+        }else {
+            Toast.makeText(this, "Erro!", Toast.LENGTH_SHORT).show();
+        }
+
     }
 }
