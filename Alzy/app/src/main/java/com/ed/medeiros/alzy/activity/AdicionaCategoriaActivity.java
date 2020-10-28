@@ -359,8 +359,6 @@ public class AdicionaCategoriaActivity extends AppCompatActivity {
             novaCategoriasDatabase.salvar();
             Toast.makeText(this, "Categoria salva!", Toast.LENGTH_SHORT).show();
             finish();
-        }else {
-            Toast.makeText(this, "Erro!", Toast.LENGTH_SHORT).show();
         }
 
     }

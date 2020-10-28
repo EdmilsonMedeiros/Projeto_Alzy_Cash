@@ -7,8 +7,10 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
@@ -78,13 +80,30 @@ public class PrincipalActivity extends AppCompatActivity {
         floatingActionMenu  = findViewById(R.id.floatingActionMenu);
 
 
-
-
         adapterMovimentacao = new AdapterMovimentacao(movimentacoes, this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapterMovimentacao);
+
+        if (isOnline()){
+
+        }else {
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+            //Configura o alertDialog:
+            alertDialog.setTitle("Erro!");
+            alertDialog.setMessage("Você está sem acesso a internet. Verifique sua conexão.");
+            alertDialog.setIcon(R.drawable.ic_baseline_warning_24);
+
+            alertDialog.setNegativeButton("Fechar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                }
+            });
+            AlertDialog alert = alertDialog.create();
+            alert.show();
+        }
 
     }
 
@@ -298,6 +317,10 @@ public class PrincipalActivity extends AppCompatActivity {
     }
     public void irtelaDetalhes(View view){
         startActivity(new Intent(this, DetalhesActivity.class));
+    }
+    public boolean isOnline() {
+        ConnectivityManager manager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        return manager.getActiveNetworkInfo() != null && manager.getActiveNetworkInfo().isConnectedOrConnecting();
     }
     @Override
     protected void onStart() {
