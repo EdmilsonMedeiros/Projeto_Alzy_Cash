@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_carteira"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.TesteCategoriasReceitaActivity"></activity>
         <activity
             android:name=".activity.AdicionaCategoriaActivity"
             android:screenOrientation="portrait"

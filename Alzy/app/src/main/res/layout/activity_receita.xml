@@ -142,15 +142,15 @@
             android:textColor="@color/font_black"
             android:textSize="18sp"/>
 
-            <TextView
-                android:id="@+id/editCategoriaReceita"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Categoria | Ex: Salário"
-                android:textSize="18sp"
-                android:onClick="irTelaCategorias"
-                android:drawableLeft="@drawable/ic_baseline_category_24"
-                android:padding="10dp"/>
+        <TextView
+            android:id="@+id/editCategoriaReceita"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_category_24"
+            android:hint="Categoria | Ex: Salário"
+            android:onClick="irTelaCategorias"
+            android:padding="10dp"
+            android:textSize="18sp" />
 
 
         <com.google.android.material.textfield.TextInputLayout

@@ -146,6 +146,10 @@ public class ReceitaActivity extends AppCompatActivity {
         startActivity(new Intent(this, CategoriasActivityReceita.class));
     }
 
+    public void irTesteCategoriasReceita(View view){
+        startActivity(new Intent(this, TesteCategoriasReceitaActivity.class));
+    }
+
     @Override
     protected void onStart() {
         super.onStart();

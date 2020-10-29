@@ -23,6 +23,7 @@ import com.ed.medeiros.alzy.pacoteauxiliar.AdapterListViewCategorias;
 import com.ed.medeiros.alzy.pacoteauxiliar.Base64ID;
 import com.ed.medeiros.alzy.pacoteauxiliar.Categorias;
 import com.ed.medeiros.alzy.pacoteauxiliar.CategoriasDatabase;
+import com.ed.medeiros.alzy.pacoteauxiliar.Movimentacao;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -58,17 +59,22 @@ public class CategoriasActivityReceita extends AppCompatActivity {
 
     private void retornaCategoriasReceita(){
 
-        categoriasRef = databaseReference.child("categorias")
+        categoriasRef = databaseReference
+                .child("categorias")
                 .child(idUsuario)
-                .child("receitas");
+                ;
 
         valueEventListenerCategorias = categoriasRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                CategoriasDatabase categoriasDatabase = dataSnapshot.getValue(CategoriasDatabase.class);
-                categoriaRetornada = categoriasDatabase.getNome();
-                Log.i("CAT", categoriaRetornada);
 
+                for (DataSnapshot dados: dataSnapshot.getChildren()){
+                    Categorias categorias = dados.getValue(Categorias.class);
+                    categorias.setKey(dados.getKey());
+                    categoriaRetornada = categorias.getNome();
+                    Log.i("CAT", categoriaRetornada);
+
+                }
                 AdapterListViewCategorias adapterListViewCategorias = new AdapterListViewCategorias(getApplicationContext(), GetDate());
                 listView.setAdapter(adapterListViewCategorias);
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -79,6 +85,8 @@ public class CategoriasActivityReceita extends AppCompatActivity {
 
                     }
                 });
+
+
 
             }
 
@@ -97,6 +105,9 @@ public class CategoriasActivityReceita extends AppCompatActivity {
     public void irTelaAdcionarCategoria(View view){
         startActivity(new Intent(this, AdicionaCategoriaActivity.class));
     }
+    public void sair(View view){
+        finish();
+    }
 
     @Override
     protected void onStart() {
@@ -105,7 +116,4 @@ public class CategoriasActivityReceita extends AppCompatActivity {
 
     }
 
-    public void sair(View view){
-        finish();
-    }
 }
