@@ -22,6 +22,7 @@ public class CategoriasDatabase {
                 .setValue(this);
     }
 
+
     public String getTipo() {
         return tipo;
     }

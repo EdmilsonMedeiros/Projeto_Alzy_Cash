@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.ed.medeiros.alzy.R;
 import com.ed.medeiros.alzy.pacoteauxiliar.Base64ID;
 
+import com.ed.medeiros.alzy.pacoteauxiliar.CategoriasDatabase;
 import com.ed.medeiros.alzy.pacoteauxiliar.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -74,6 +75,8 @@ public class CadastroActivity extends AppCompatActivity {
                             usuario.setIdUsuario(idUsuario);
                             usuario.salvar();
 
+                            salvarCategoriasPadroes();
+
                             irTelaSplash();
                         }else {
                             Toast.makeText(getApplicationContext(), "Erro ao Cadastrar", Toast.LENGTH_SHORT).show();
@@ -99,6 +102,33 @@ public class CadastroActivity extends AppCompatActivity {
             alert.show();
         }
     }
+
+    private void salvarCategoriasPadroes() {
+        String [] categoriasReceita = {"Poupança", "Salário", "Extra", "Bonificação"};
+        String [] categoriasReceitaIcone = {"ic_poupanca", "ic_salario", "ic_extra", "ic_bonificacao"};
+        int a = 0;
+        while (a < categoriasReceita.length){
+            CategoriasDatabase categoriasDatabase = new CategoriasDatabase();
+            categoriasDatabase.setTipo("r");
+            categoriasDatabase.setNome(categoriasReceita[a]);
+            categoriasDatabase.setImagem(categoriasReceitaIcone[a]);
+            categoriasDatabase.salvar();
+            a = a +1;
+        }
+
+        String [] categoriasDespesa = {"Compras", "Casa", "Geral", "Carro", "Esporte", "Presente", "Roupa", "Entretenimento", "Ferias", "Saúde", "Contas", "Lanche", "Comida", "Viagem", "Transporte", "Educação"};
+        String [] categoriasDespesaIcone = {"ic_compras", "ic_casa", "ic_geral", "ic_carro", "ic_esporte", "ic_presente", "ic_roupa", "ic_entretenimento", "ic_ferias", "ic_saude", "ic_contas", "ic_lanche", "ic_comida", "ic_viagem", "ic_transporte", "ic_livro"};
+        int b = 0;
+        while (b < categoriasDespesa.length){
+            CategoriasDatabase categoriasDatabase = new CategoriasDatabase();
+            categoriasDatabase.setTipo("d");
+            categoriasDatabase.setNome(categoriasDespesa[b]);
+            categoriasDatabase.setImagem(categoriasDespesaIcone[b]);
+            categoriasDatabase.salvar();
+            b = b +1;
+        }
+    }
+
     //--
     public void irTelaLogin(View view){
         startActivity(new Intent(getApplicationContext(), LoginActivity.class));
