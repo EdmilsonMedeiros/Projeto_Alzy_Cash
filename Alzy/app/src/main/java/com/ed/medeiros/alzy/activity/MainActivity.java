@@ -21,6 +21,7 @@ public class MainActivity extends IntroActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setButtonBackVisible(false);
+        setButtonNextVisible(false);
         addSlide(new FragmentSlide.Builder()
         .background(R.color.whiteColorAux).fragment(R.layout.intro_1).backgroundDark(R.color.colorPrimaryDarkDefault)
         .build());
