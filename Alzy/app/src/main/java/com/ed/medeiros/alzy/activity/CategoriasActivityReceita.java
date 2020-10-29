@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -92,6 +93,9 @@ public class CategoriasActivityReceita extends AppCompatActivity {
         lst = new ArrayList<>();
         lst.add(new Categorias(categoriaRetornada, R.mipmap.ic_nota));
         return lst;
+    }
+    public void irTelaAdcionarCategoria(View view){
+        startActivity(new Intent(this, AdicionaCategoriaActivity.class));
     }
 
     @Override
