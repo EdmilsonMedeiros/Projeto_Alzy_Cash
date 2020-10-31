@@ -142,13 +142,11 @@ public class ReceitaActivity extends AppCompatActivity {
     public void sair(View view){
         finish();
     }
+
     public void irTelaCategorias(View view){
-        startActivity(new Intent(this, CategoriasActivityReceita.class));
+        startActivity(new Intent(this, ListCategoriasActivity.class));
     }
 
-    public void irTesteCategoriasReceita(View view){
-        startActivity(new Intent(this, TesteCategoriasReceitaActivity.class));
-    }
 
     @Override
     protected void onStart() {

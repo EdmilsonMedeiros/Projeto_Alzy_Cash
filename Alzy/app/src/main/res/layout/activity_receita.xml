@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="irTelaCategorias"
     tools:context=".activity.ReceitaActivity">
 
     <!---->
@@ -88,8 +89,8 @@
         android:id="@+id/fb_confirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="validarCamposESalvarReceita"
         android:background="@color/colorPrimaryDarkDefault"
+        android:onClick="validarCamposESalvarReceita"
         android:src="@drawable/mi_ic_finish"
         app:fab_colorNormal="@color/colorPrimaryReceita"
         app:fab_label="Confirmar"
@@ -127,7 +128,6 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
 
-
         <TextView
 
             android:id="@+id/editDataReceita"
@@ -140,7 +140,7 @@
             android:padding="10dp"
             android:text="31/12/2020"
             android:textColor="@color/font_black"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/editCategoriaReceita"
@@ -157,11 +157,11 @@
             android:id="@+id/textInputLayout6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/mi_icon_color_dark"
             android:gravity="center"
             android:textAlignment="center"
             tools:layout_editor_absoluteX="54dp"
-            tools:layout_editor_absoluteY="397dp"
-            android:background="@color/mi_icon_color_dark">
+            tools:layout_editor_absoluteY="397dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editDescricaoReceita"
