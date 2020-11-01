@@ -119,6 +119,7 @@ public class ReceitaActivity extends AppCompatActivity {
             referenceDespesa.child("totalReceita").setValue(valorRecuperado + receitaTotal);
             salvarNovaMovimentacao();
             Toast.makeText(this, "Receita Salva!!!", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(this, PrincipalActivity.class));
             finish();
         }
     }
@@ -140,6 +141,7 @@ public class ReceitaActivity extends AppCompatActivity {
     }
 
     public void sair(View view){
+        startActivity(new Intent(this, PrincipalActivity.class));
         finish();
     }
 

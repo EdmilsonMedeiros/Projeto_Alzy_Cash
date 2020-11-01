@@ -311,6 +311,7 @@ public class PrincipalActivity extends AppCompatActivity {
     }
     public void irTelaReceita(View view){
         startActivity(new Intent(this, ReceitaActivity.class));
+        finish();
     }
     public void irTelaDespesa(View view){
         startActivity(new Intent(this, DespesaActivity.class));
