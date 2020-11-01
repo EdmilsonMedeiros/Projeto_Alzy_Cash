@@ -44,7 +44,7 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout17"
         android:layout_width="match_parent"
         android:layout_height="70dp"
@@ -64,10 +64,21 @@
             app:fab_label="Configurações"
             app:fab_size="normal"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.002"
-            app:layout_constraintStart_toStartOf="parent"></com.github.clans.fab.FloatingActionButton>
+            app:layout_constraintStart_toStartOf="parent" />
 
-    </LinearLayout>
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fb_adicionar"
+            android:layout_width="85dp"
+            android:layout_height="90dp"
+            android:background="@color/colorPrimaryDarkDefault"
+            android:onClick="irTelaAdcionarCategoria"
+            android:src="@drawable/ic_baseline_add_circle_24"
+            app:fab_colorNormal="@color/colorPrimaryDefault"
+            app:fab_label="Configurações"
+            app:fab_size="normal"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

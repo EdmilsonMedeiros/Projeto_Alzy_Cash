@@ -3,6 +3,7 @@ package com.ed.medeiros.alzy.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -105,18 +106,16 @@ public class CategoriasActivity extends AppCompatActivity {
     }
     //-------------
 
-
     private List<Categorias> GetDados(String categoriasRetorno) {
         lst.add(new Categorias(categoriasRetorno));
         return lst;
     }
-
-
-
-
     //-------------
 
 
+    public void irTelaAdcionarCategoria(View view){
+        startActivity(new Intent(this, AdicionaCategoriaActivity.class));
+    }
     public void sair(View view){
         finish();
     }
