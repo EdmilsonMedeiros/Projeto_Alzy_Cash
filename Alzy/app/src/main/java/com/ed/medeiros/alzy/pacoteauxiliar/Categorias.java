@@ -3,10 +3,11 @@ package com.ed.medeiros.alzy.pacoteauxiliar;
 public class Categorias {
     String nome, imagem, tipo, key;
 
-    public Categorias(String nome /*,String imagem, String tipo, String key*/) {
+    public Categorias(String nome ,String imagem /*String tipo, String key*/) {
         this.nome = nome;
-        /*
         this.imagem = imagem;
+
+        /*
         this.tipo = tipo;
         this.key = key;
 

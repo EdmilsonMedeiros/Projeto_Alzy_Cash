@@ -41,6 +41,7 @@ public class CategoriasActivity extends AppCompatActivity {
     private List<Categorias> categoriasList = new ArrayList<>();
     private List<Categorias> lst= new ArrayList<>();
     String categoriasNome;
+    String categoriasImagem;
 
 
 
@@ -77,9 +78,10 @@ public class CategoriasActivity extends AppCompatActivity {
                     CategoriasDatabase categorias = dados.getValue(CategoriasDatabase.class);
                     categorias.setKey(dados.getKey());
                     categoriasNome = categorias.getNome();
+                    categoriasImagem = categorias.getImagem();
                     Log.i("THIS", "AQUI: "+categoriasNome);
                     listViewCategorias = findViewById(R.id.lisViewCategorias);
-                    adapterCategorias = new AdapterCategorias(GetDados(categoriasNome), getApplicationContext());
+                    adapterCategorias = new AdapterCategorias(GetDados(categoriasNome, categoriasImagem), getApplicationContext());
                     listViewCategorias.setAdapter(adapterCategorias);
 
                 }
@@ -106,8 +108,8 @@ public class CategoriasActivity extends AppCompatActivity {
     }
     //-------------
 
-    private List<Categorias> GetDados(String categoriasRetorno) {
-        lst.add(new Categorias(categoriasRetorno));
+    private List<Categorias> GetDados(String categoriasRetorno, String imagem) {
+        lst.add(new Categorias(categoriasRetorno, imagem));
         return lst;
     }
     //-------------
