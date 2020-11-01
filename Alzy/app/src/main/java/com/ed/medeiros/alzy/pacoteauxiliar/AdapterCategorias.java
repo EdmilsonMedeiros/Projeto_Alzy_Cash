@@ -1,10 +1,12 @@
 package com.ed.medeiros.alzy.pacoteauxiliar;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ed.medeiros.alzy.R;
@@ -40,6 +42,7 @@ public class AdapterCategorias extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         TextView textViewNome;
+        ImageView imageViewCategoria;
 
         Categorias c = lst.get(position);
 
@@ -47,8 +50,10 @@ public class AdapterCategorias extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.list_categorias_adapter, null);
 
         textViewNome = convertView.findViewById(R.id.textListItem);
+        imageViewCategoria = convertView.findViewById(R.id.imageViewListCategorias);
 
         textViewNome.setText(c.getNome());
+        imageViewCategoria.setImageResource(R.mipmap.ic_contas);
 
         return convertView;
     }
