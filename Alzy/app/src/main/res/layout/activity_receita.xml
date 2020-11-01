@@ -148,7 +148,7 @@
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_baseline_category_24"
             android:hint="Categoria | Ex: Salário"
-            android:onClick="irTelaCategorias"
+            android:onClick="irTelaCategoriasActivity"
             android:padding="10dp"
             android:textSize="18sp" />
 

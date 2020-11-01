@@ -146,6 +146,9 @@ public class ReceitaActivity extends AppCompatActivity {
     public void irTelaCategorias(View view){
         startActivity(new Intent(this, ListCategoriasActivity.class));
     }
+    public void irTelaCategoriasActivity(View view){
+        startActivity(new Intent(this, CategoriasActivity.class));
+    }
 
 
     @Override
