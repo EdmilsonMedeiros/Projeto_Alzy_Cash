@@ -61,10 +61,9 @@ public class AdapterCategorias extends BaseAdapter {
         //----------------------------------
         imageViewCategoria.setImageResource(R.mipmap.ic_contas);
 
-        if (c.getImagem().equals("ic_salario")){
+        if (c.getImagem().equals("ic_nota")){
             imageViewCategoria.setImageResource(R.mipmap.ic_nota);
         }
-
         if (c.getImagem().equals("ic_extra")){
             imageViewCategoria.setImageResource(R.mipmap.ic_extra);
         }
