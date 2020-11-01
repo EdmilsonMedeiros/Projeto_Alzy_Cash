@@ -104,8 +104,8 @@ public class CadastroActivity extends AppCompatActivity {
     }
 
     private void salvarCategoriasPadroes() {
-        String [] categoriasReceita = {"Poupança", "Salário", "Extra", "Bonificação"};
-        String [] categoriasReceitaIcone = {"ic_poupanca", "ic_salario", "ic_extra", "ic_bonificacao"};
+        String [] categoriasReceita = { "Salário", "Poupança","Extra", "Bonificação"};
+        String [] categoriasReceitaIcone = {"ic_nota", "ic_poupanca", "ic_extra", "ic_bonificacao"};
         int a = 0;
         while (a < categoriasReceita.length){
             CategoriasDatabase categoriasDatabase = new CategoriasDatabase();
