@@ -49,43 +49,47 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editNomeCadastro"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="70dp"
             android:layout_marginBottom="10dp"
-            android:background="@mipmap/teste_caixa_edit"
+            android:background="@mipmap/back_input"
             android:drawableRight="@drawable/ic_baseline_person_24"
             android:hint="Nome"
             android:inputType="textPersonName|textCapSentences"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:textAlignment="center" />
 
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editEmailCadastro"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="70dp"
             android:layout_marginBottom="10dp"
-            android:background="@mipmap/teste_caixa_edit"
+            android:background="@mipmap/back_input"
             android:drawableRight="@drawable/ic_baseline_email_24"
             android:hint="E-mail"
             android:inputType="textWebEmailAddress"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:textAlignment="center" />
 
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:hintEnabled="false"
-            app:passwordToggleEnabled="true">
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/colorPrimaryDarkDefault">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editSenhaCadastro"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="70dp"
                 android:layout_marginBottom="10dp"
-                android:background="@mipmap/teste_caixa_edit"
+                android:background="@mipmap/back_input"
                 android:drawableLeft="@drawable/ic_baseline_lock_24"
                 android:hint="Senha"
                 android:inputType="textPassword"
-                android:padding="10dp" />
+                android:padding="10dp"
+                android:textAlignment="center" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button

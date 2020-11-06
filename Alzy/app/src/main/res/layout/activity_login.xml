@@ -75,13 +75,14 @@
 
             android:id="@+id/editEmailLogin"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="70dp"
             android:layout_marginBottom="10dp"
-            android:background="@mipmap/teste_caixa_edit"
+            android:background="@mipmap/back_input"
             android:drawableRight="@drawable/ic_baseline_email_24"
             android:hint="E-mail"
             android:inputType="textWebEmailAddress"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:textAlignment="center" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout13"
@@ -92,7 +93,7 @@
             android:textAlignment="center"
             app:errorEnabled="true"
             app:hintEnabled="false"
-
+            app:passwordToggleTint="@color/colorPrimaryDarkDefault"
             app:passwordToggleEnabled="true"
             tools:layout_editor_absoluteX="40dp"
             tools:layout_editor_absoluteY="273dp">
@@ -100,18 +101,19 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editSenhaLogin"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@mipmap/teste_caixa_edit"
+                android:layout_height="70dp"
+                android:background="@mipmap/back_input"
                 android:hint="Senha"
                 android:inputType="textPassword"
-                android:padding="10dp" />
+                android:padding="10dp"
+                android:textAlignment="center" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/buttonLogin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDefault"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimaryDarkDefault"
             android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"
             android:gravity="center"
             android:onClick="validarELogarUsuario"

@@ -53,15 +53,9 @@ public class CategoriasActivity extends AppCompatActivity {
 
 
 
-        recuperarCategorias();
+
 
         //-------------
-
-        /*
-
-
-         */
-
         //-------------
 
     }
@@ -73,27 +67,32 @@ public class CategoriasActivity extends AppCompatActivity {
         valueEventListenerCategorias = databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                lst.clear();
 
                 for (DataSnapshot dados: dataSnapshot.getChildren()){
                     CategoriasDatabase categorias = dados.getValue(CategoriasDatabase.class);
                     categorias.setKey(dados.getKey());
                     categoriasNome = categorias.getNome();
                     categoriasImagem = categorias.getImagem();
-                    Log.i("THIS", "AQUI: "+categoriasNome);
+                    //Log.i("THIS", "AQUI: "+categoriasNome);
                     listViewCategorias = findViewById(R.id.lisViewCategorias);
+
                     adapterCategorias = new AdapterCategorias(GetDados(categoriasNome, categoriasImagem), getApplicationContext());
                     listViewCategorias.setAdapter(adapterCategorias);
 
                 }
                 adapterCategorias.notifyDataSetChanged();
+                //Executa algo ao selecionar o item
 
                 listViewCategorias.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Categorias c = lst.get(position);
-                        Toast.makeText(getApplicationContext(), "Retorno: "+c.getNome(), Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(), "Retorno: "+c.getNome(), Toast.LENGTH_SHORT).show();
                     }
                 });
+
+
 
             }
 
@@ -120,5 +119,17 @@ public class CategoriasActivity extends AppCompatActivity {
     }
     public void sair(View view){
         finish();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        recuperarCategorias();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
     }
 }
