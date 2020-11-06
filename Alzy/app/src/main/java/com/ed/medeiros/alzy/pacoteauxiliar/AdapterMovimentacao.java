@@ -32,7 +32,7 @@ public class AdapterMovimentacao extends RecyclerView.Adapter<AdapterMovimentaca
         Movimentacao movimentacao = movimentacoes.get(position);
 
         holder.titulo.setText(movimentacao.getDescricao());
-        holder.valor.setText(String.valueOf(movimentacao.getValor()));
+        holder.valor.setText(String.valueOf("R$" + movimentacao.getValor()));
         holder.categoria.setText(movimentacao.getCategoria());
         holder.data.setText(movimentacao.getData());
 
@@ -40,7 +40,7 @@ public class AdapterMovimentacao extends RecyclerView.Adapter<AdapterMovimentaca
 
         if (movimentacao.getTipo().equals("d")) {
             holder.valor.setTextColor(context.getResources().getColor(R.color.colorPrimaryDarkDespesa));
-            holder.valor.setText("-" + movimentacao.getValor());
+            holder.valor.setText("R$ -" + movimentacao.getValor());
             holder.cardMovimentacao.setCardBackgroundColor(context.getResources().getColor(R.color.colorCardDespesa));
         }
         if (movimentacao.getTipo().equals("r")){
