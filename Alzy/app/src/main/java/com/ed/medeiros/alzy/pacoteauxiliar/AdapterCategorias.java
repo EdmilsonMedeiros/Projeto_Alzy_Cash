@@ -82,7 +82,6 @@ public class AdapterCategorias extends BaseAdapter {
 
         int a = 0;
         while (a < lstImagens.size()){
-
             if ((lstImagens.toArray()[a]).equals("ic_nota")){
                 imageViewCategoria.setImageResource(R.mipmap.ic_nota);
             }
@@ -95,35 +94,27 @@ public class AdapterCategorias extends BaseAdapter {
             if ((lstImagens.toArray()[a]).equals("ic_cifrao")){
                 imageViewCategoria.setImageResource(R.mipmap.ic_cifrao);
             }
-
             if ((lstImagens.toArray()[a]).equals("ic_compras")){
                 imageViewCategoria.setImageResource(R.mipmap.ic_compras);
             }
-
             if ((lstImagens.toArray()[a]).equals("ic_casa")){
                 imageViewCategoria.setImageResource(R.mipmap.ic_casa);
             }
-
             if ((lstImagens.toArray()[a]).equals("ic_geral")){
                 imageViewCategoria.setImageResource(R.mipmap.ic_geral);
             }
-
             if ((lstImagens.toArray()[a]).equals("ic_carro")){
                 imageViewCategoria.setImageResource(R.mipmap.ic_carro);
             }
-
             if ((lstImagens.toArray()[a]).equals("ic_esporte")){
                 imageViewCategoria.setImageResource(R.mipmap.ic_esporte);
             }
-
             if ((lstImagens.toArray()[a]).equals("ic_presente")){
                 imageViewCategoria.setImageResource(R.mipmap.ic_presente);
             }
-
             if ((lstImagens.toArray()[a]).equals("ic_roupa")){
                 imageViewCategoria.setImageResource(R.mipmap.ic_roupa);
             }
-
             if ((lstImagens.toArray()[a]).equals("ic_entretenimento")){
                 imageViewCategoria.setImageResource(R.mipmap.ic_entretenimento);
             }
@@ -150,6 +141,9 @@ public class AdapterCategorias extends BaseAdapter {
             }
             if ((lstImagens.toArray()[a]).equals("ic_livro")){
                 imageViewCategoria.setImageResource(R.mipmap.ic_livro);
+            }
+            if ((lstImagens.toArray()[a]).equals("ic_extra")){
+                imageViewCategoria.setImageResource(R.mipmap.ic_extra);
             }
             a++;
         }

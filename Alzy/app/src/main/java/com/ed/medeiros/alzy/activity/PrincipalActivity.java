@@ -247,6 +247,13 @@ public class PrincipalActivity extends AppCompatActivity {
                 String resultadoFormatado = decimalFormat.format(calculo);
                 String total = "R$ " + resultadoFormatado;
                 textSaldo.setText(total);
+
+                if (calculo < 0){
+                    textSaldo.setTextColor(getResources().getColor(R.color.colorPrimaryDarkDespesa));
+                }else{
+                    textSaldo.setTextColor(getResources().getColor(R.color.colorPrimaryDarkReceita));
+                }
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
