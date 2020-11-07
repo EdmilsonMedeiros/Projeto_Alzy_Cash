@@ -32,7 +32,7 @@ public class AdapterMovimentacao extends RecyclerView.Adapter<AdapterMovimentaca
         Movimentacao movimentacao = movimentacoes.get(position);
 
         holder.titulo.setText(movimentacao.getDescricao());
-        holder.valor.setText(String.valueOf("R$" + movimentacao.getValor()));
+        holder.valor.setText(("R$ " + movimentacao.getValor()));
         holder.categoria.setText(movimentacao.getCategoria());
         holder.data.setText(movimentacao.getData());
 
