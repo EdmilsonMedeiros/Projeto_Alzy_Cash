@@ -1,219 +1,219 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/whiteColorAux"
-    tools:context=".activity.ConfiguracoesActivity">
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:background="@android:color/transparent"
+                                                   tools:context=".activity.ConfiguracoesActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDarkDefault"
-        android:orientation="horizontal"
-        android:padding="10px"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDarkDefault"
+            android:orientation="horizontal"
+            android:padding="10px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:drawableRight="@drawable/ic_baseline_settings_applications_24"
-            android:text="Configurações"
-            android:textAlignment="center"
-            android:textColor="@color/whiteColorAux"
-            android:textSize="24sp" />
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/ic_baseline_settings_applications_24"
+                android:text="Configurações"
+                android:textAlignment="center"
+                android:textColor="@color/whiteColorAux"
+                android:textSize="24sp"/>
     </LinearLayout>
 
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:background="@color/whiteColorAux"
-        android:orientation="vertical"
-        android:padding="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+            android:id="@+id/linearLayout3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:background="@android:color/transparent"
+            android:orientation="vertical"
+            android:padding="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <TextView
-            android:id="@+id/textView10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableRight="@drawable/ic_baseline_category_24"
-            android:padding="10dp"
-            android:text="Adicionar Categoria Personalizada"
-            android:textAlignment="inherit"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:onClick="irTelaAdcionarCategoria"/>
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_baseline_category_24"
+                android:padding="10dp"
+                android:text="Adicionar Categoria Personalizada"
+                android:textAlignment="inherit"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:onClick="irTelaAdcionarCategoria"/>
 
         <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"/>
 
         <TextView
-            android:id="@+id/textAlterarSenha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableRight="@drawable/ic_baseline_lock_24"
-            android:onClick="irTelaAlterarSenha"
-            android:padding="10dp"
-            android:text="Alterar Senha"
-            android:textAlignment="inherit"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+                android:id="@+id/textAlterarSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_baseline_lock_24"
+                android:onClick="irTelaAlterarSenha"
+                android:padding="10dp"
+                android:text="Alterar Senha"
+                android:textAlignment="inherit"
+                android:textColor="#000000"
+                android:textSize="18sp"/>
 
         <View
-            android:id="@+id/divider2"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"/>
 
         <TextView
-            android:id="@+id/textView12"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableRight="@drawable/ic_baseline_email_24"
-            android:onClick="irTelaAlterarEmail"
-            android:padding="10dp"
-            android:text="Alterar E-mail"
-            android:textAlignment="inherit"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_baseline_email_24"
+                android:onClick="irTelaAlterarEmail"
+                android:padding="10dp"
+                android:text="Alterar E-mail"
+                android:textAlignment="inherit"
+                android:textColor="#000000"
+                android:textSize="18sp"/>
 
         <View
-            android:id="@+id/divider3"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"/>
 
         <TextView
-            android:id="@+id/textView13"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableRight="@drawable/ic_baseline_person_24"
-            android:onClick="irTelaAlterarNome"
-            android:padding="10dp"
-            android:text="Alterar Nome de Usuário"
-            android:textAlignment="inherit"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_baseline_person_24"
+                android:onClick="irTelaAlterarNome"
+                android:padding="10dp"
+                android:text="Alterar Nome de Usuário"
+                android:textAlignment="inherit"
+                android:textColor="#000000"
+                android:textSize="18sp"/>
 
         <View
-            android:id="@+id/divider7"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
+                android:id="@+id/divider7"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"/>
 
         <TextView
-            android:id="@+id/textView14"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableRight="@drawable/ic_baseline_bug_report_24"
-            android:onClick="irTelaReport"
-            android:padding="10dp"
-            android:text="Reportar Erro"
-            android:textAlignment="inherit"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_baseline_bug_report_24"
+                android:onClick="irTelaReport"
+                android:padding="10dp"
+                android:text="Reportar Erro"
+                android:textAlignment="inherit"
+                android:textColor="#000000"
+                android:textSize="18sp"/>
 
         <View
-            android:id="@+id/divider4"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
+                android:id="@+id/divider4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"/>
 
         <TextView
-            android:id="@+id/textView15"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableRight="@drawable/ic_baseline_info_24"
-            android:onClick="irTelaSobre"
-            android:padding="10dp"
-            android:text="Sobre o App"
-            android:textAlignment="inherit"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_baseline_info_24"
+                android:onClick="irTelaSobre"
+                android:padding="10dp"
+                android:text="Sobre o App"
+                android:textAlignment="inherit"
+                android:textColor="#000000"
+                android:textSize="18sp"/>
 
         <View
-            android:id="@+id/divider5"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
+                android:id="@+id/divider5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"/>
 
         <TextView
-            android:id="@+id/textSair"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableRight="@drawable/ic_baseline_exit_to_app_24"
-            android:onClick="logOut"
-            android:padding="10dp"
-            android:text="Sair"
-            android:textAlignment="inherit"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+                android:id="@+id/textSair"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_baseline_exit_to_app_24"
+                android:onClick="logOut"
+                android:padding="10dp"
+                android:text="Sair"
+                android:textAlignment="inherit"
+                android:textColor="#000000"
+                android:textSize="18sp"/>
 
         <View
-            android:id="@+id/divider6"
-            android:layout_width="wrap_content"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
+                android:id="@+id/divider6"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@android:color/transparent"/>
 
     </LinearLayout>
 
     <!--FB's-->
 
     <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="0dp"
-        android:layout_height="70dp"
-        android:background="@color/gra_ligh"
-        android:orientation="vertical"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        app:layout_constraintVertical_bias="1.0">
+            android:id="@+id/linearLayout4"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@mipmap/back_padrao"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+            app:layout_constraintVertical_bias="1.0">
 
         <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            app:srcCompat="@mipmap/ic_carteira"
-            tools:layout_editor_absoluteX="181dp"
-            tools:layout_editor_absoluteY="632dp" />
+                android:id="@+id/imageView7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                app:srcCompat="@mipmap/ic_carteira"
+                tools:layout_editor_absoluteX="181dp"
+                tools:layout_editor_absoluteY="632dp"/>
     </LinearLayout>
 
     <com.github.clans.fab.FloatingActionButton
-        android:id="@+id/fb_voltar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp"
-        android:background="@color/colorPrimaryDarkDefault"
-        android:onClick="sairConfiguracoes"
-        android:src="@drawable/ic_baseline_arrow_back_ios_24"
-        app:fab_colorNormal="@color/colorPrimaryDefault"
-        app:fab_label="Configurações"
-        app:fab_size="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"></com.github.clans.fab.FloatingActionButton>
+            android:id="@+id/fb_voltar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/colorPrimaryDarkDefault"
+            android:onClick="sairConfiguracoes"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            app:fab_colorNormal="@color/colorPrimaryDefault"
+            app:fab_label="Configurações"
+            app:fab_size="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"></com.github.clans.fab.FloatingActionButton>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

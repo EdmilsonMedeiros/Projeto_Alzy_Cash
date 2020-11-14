@@ -79,7 +79,7 @@ public class CadastroActivity extends AppCompatActivity {
 
                             irTelaSplash();
                         }else {
-                            Toast.makeText(getApplicationContext(), "Erro ao Cadastrar", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Erro ao Cadastrar, verifique seus dados!", Toast.LENGTH_SHORT).show();
                             progressBarCircle.setVisibility(View.GONE);
                         }
                     }

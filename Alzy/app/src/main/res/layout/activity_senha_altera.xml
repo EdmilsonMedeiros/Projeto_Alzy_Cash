@@ -53,25 +53,25 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="0dp"
-        android:layout_height="70dp"
-        android:background="@color/gra_ligh"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout14"
-        app:layout_constraintVertical_bias="1.0">
+            android:id="@+id/linearLayout4"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@mipmap/back_padrao"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout14"
+            app:layout_constraintVertical_bias="1.0">
 
         <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            app:srcCompat="@mipmap/ic_carteira"
-            tools:layout_editor_absoluteX="181dp"
-            tools:layout_editor_absoluteY="632dp" />
+                android:id="@+id/imageView7"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                app:srcCompat="@mipmap/ic_carteira"
+                tools:layout_editor_absoluteX="181dp"
+                tools:layout_editor_absoluteY="632dp"/>
     </LinearLayout>
 
     <com.github.clans.fab.FloatingActionButton

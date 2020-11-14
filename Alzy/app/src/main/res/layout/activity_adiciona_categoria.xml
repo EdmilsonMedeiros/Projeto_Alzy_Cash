@@ -109,24 +109,24 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout16"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@color/gra_ligh"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+            android:id="@+id/linearLayout16"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@mipmap/back_padrao"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/imageView10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textAlignment="center"
-            app:srcCompat="@mipmap/ic_carteira" />
+                android:id="@+id/imageView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                app:srcCompat="@mipmap/ic_carteira"/>
 
     </LinearLayout>
 

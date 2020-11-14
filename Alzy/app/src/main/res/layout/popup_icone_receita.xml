@@ -1,236 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="350dp"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:background="@color/whiteColorAux"
-    android:orientation="vertical"
-    android:padding="10dp"
-    tools:context=".activity.AdicionaCategoriaActivity">
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="350dp"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:background="@mipmap/bac_fund"
+              android:orientation="vertical"
+              android:padding="10dp"
+              tools:context=".activity.AdicionaCategoriaActivity">
 
     <TextView
-        android:id="@+id/textFechar"
-        android:layout_width="27dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:text="X"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+            android:id="@+id/textFechar"
+            android:layout_width="27dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="X"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:textColor="@color/colorPrimaryDarkDefault"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Escolha um ícone"
-            android:textAlignment="center"
-            android:textStyle="bold"/>
+            android:padding="10dp"
+            android:orientation="horizontal">
+
+        <TextView
+                android:textColor="@color/whiteColorAux"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Escolha um ícone"
+                android:textAlignment="center"
+                android:textStyle="bold"/>
 
     </LinearLayout>
 
     <LinearLayout
-        android:padding="5dp"
-        android:gravity="center"
-        android:layout_marginTop="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            android:padding="5dp"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
         <ImageView
-            android:layout_margin="5dp"
-            android:id="@+id/ic_poupanca"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@mipmap/ic_poupanca" />
+                android:layout_margin="5dp"
+                android:id="@+id/ic_poupanca"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:srcCompat="@mipmap/ic_poupanca"/>
 
         <ImageView
-            android:layout_margin="5dp"
-            android:id="@+id/ic_nota"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@mipmap/ic_nota" />
+                android:layout_margin="5dp"
+                android:id="@+id/ic_nota"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:srcCompat="@mipmap/ic_nota"/>
 
         <ImageView
-            android:layout_margin="5dp"
-            android:id="@+id/ic_bonificacao"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@mipmap/ic_bonificacao" />
+                android:layout_margin="5dp"
+                android:id="@+id/ic_bonificacao"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:srcCompat="@mipmap/ic_bonificacao"/>
 
         <ImageView
-            android:id="@+id/ic_extra"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:onClick="iExtra"
-            app:srcCompat="@mipmap/ic_extra" />
+                android:id="@+id/ic_extra"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:onClick="iExtra"
+                app:srcCompat="@mipmap/ic_extra"/>
 
 
     </LinearLayout>
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:padding="5dp">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="5dp">
 
         <ImageView
-            android:id="@+id/ic_cifrao"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            app:srcCompat="@mipmap/ic_cifrao"/>
+                android:id="@+id/ic_cifrao"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                app:srcCompat="@mipmap/ic_cifrao"/>
         <ImageView
-            android:id="@+id/ic_compras"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            app:srcCompat="@mipmap/ic_compras"/>
+                android:id="@+id/ic_compras"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                app:srcCompat="@mipmap/ic_compras"/>
 
         <ImageView
-            android:id="@+id/ic_casa"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            app:srcCompat="@mipmap/ic_casa" />
+                android:id="@+id/ic_casa"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                app:srcCompat="@mipmap/ic_casa"/>
 
         <ImageView
-            android:id="@+id/ic_geral"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            app:srcCompat="@mipmap/ic_geral" />
+                android:id="@+id/ic_geral"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                app:srcCompat="@mipmap/ic_geral"/>
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:padding="5dp">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="5dp">
 
         <ImageView
-            android:id="@+id/ic_carro"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            app:srcCompat="@mipmap/ic_carro"/>
+                android:id="@+id/ic_carro"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                app:srcCompat="@mipmap/ic_carro"/>
         <ImageView
-            android:id="@+id/ic_esporte"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            app:srcCompat="@mipmap/ic_esporte"/>
+                android:id="@+id/ic_esporte"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                app:srcCompat="@mipmap/ic_esporte"/>
 
         <ImageView
-            android:id="@+id/ic_presente"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            app:srcCompat="@mipmap/ic_presente" />
+                android:id="@+id/ic_presente"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                app:srcCompat="@mipmap/ic_presente"/>
 
         <ImageView
-            android:id="@+id/ic_roupa"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            app:srcCompat="@mipmap/ic_roupa" />
+                android:id="@+id/ic_roupa"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                app:srcCompat="@mipmap/ic_roupa"/>
 
     </LinearLayout>
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:padding="5dp">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="5dp">
 
         <ImageView
-            android:id="@+id/ic_entretenimento"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            app:srcCompat="@mipmap/ic_entretenimento" />
+                android:id="@+id/ic_entretenimento"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                app:srcCompat="@mipmap/ic_entretenimento"/>
 
         <ImageView
-            android:id="@+id/ic_ferias"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            app:srcCompat="@mipmap/ic_ferias" />
+                android:id="@+id/ic_ferias"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                app:srcCompat="@mipmap/ic_ferias"/>
 
         <ImageView
-            android:id="@+id/ic_saude"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            app:srcCompat="@mipmap/ic_saude" />
+                android:id="@+id/ic_saude"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                app:srcCompat="@mipmap/ic_saude"/>
 
         <ImageView
-            android:id="@+id/ic_contas"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            app:srcCompat="@mipmap/ic_contas" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:padding="5dp">
-
-        <ImageView
-            android:id="@+id/ic_lanche"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            app:srcCompat="@mipmap/ic_lanche" />
-
-        <ImageView
-            android:id="@+id/ic_comida"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            app:srcCompat="@mipmap/ic_comida" />
-
-        <ImageView
-            android:id="@+id/ic_viagem"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            app:srcCompat="@mipmap/ic_viagem" />
-
-        <ImageView
-            android:id="@+id/ic_transporte"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            app:srcCompat="@mipmap/ic_transporte" />
+                android:id="@+id/ic_contas"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                app:srcCompat="@mipmap/ic_contas"/>
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:padding="5dp">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="5dp">
 
         <ImageView
-            android:id="@+id/ic_livro"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            app:srcCompat="@mipmap/ic_livro" />
+                android:id="@+id/ic_lanche"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                app:srcCompat="@mipmap/ic_lanche"/>
+
+        <ImageView
+                android:id="@+id/ic_comida"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                app:srcCompat="@mipmap/ic_comida"/>
+
+        <ImageView
+                android:id="@+id/ic_viagem"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                app:srcCompat="@mipmap/ic_viagem"/>
+
+        <ImageView
+                android:id="@+id/ic_transporte"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                app:srcCompat="@mipmap/ic_transporte"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="5dp">
+
+        <ImageView
+                android:id="@+id/ic_livro"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                app:srcCompat="@mipmap/ic_livro"/>
 
 
     </LinearLayout>
